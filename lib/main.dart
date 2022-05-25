@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 import 'component.dart';
 
 main() {
-  runApp(
-    GameWidget(
-      game: TolyGame(),
-    ),
-  );
+  runApp(GameWidget(game: TolyGame()));
   FlameAudio.play('background.mp3');
 }
 
