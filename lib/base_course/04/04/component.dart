@@ -14,8 +14,7 @@ class Adventurer extends SpriteAnimationComponent with HasGameRef {
       sprites
           .add(await gameRef.loadSprite('adventurer/adventurer-bow-0$i.png'));
     }
-    animation =
-        SpriteAnimation.spriteList(sprites, stepTime: 0.15, loop: true);
+    animation = SpriteAnimation.spriteList(sprites, stepTime: 0.15, loop: true);
     position = gameRef.size / 2;
     animation!.onComplete = _onLastFrame;
   }
@@ -56,13 +55,13 @@ class Adventurer extends SpriteAnimationComponent with HasGameRef {
   }
 }
 
-class Monster extends SpriteComponent {
+class Monster extends SpriteAnimationComponent {
   Monster({
-    required Sprite sprite,
+    required SpriteAnimation animation,
     required Vector2 size,
     required Vector2 position,
   }) : super(
-          sprite: sprite,
+          animation: animation,
           size: size,
           position: position,
           anchor: Anchor.center,
@@ -71,5 +70,21 @@ class Monster extends SpriteComponent {
   @override
   Future<void> onLoad() async {
     add(RectangleHitbox()..debugMode = true);
+  }
+
+  double _speed = 150;
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    Vector2 ds = Vector2(-1, 0) * _speed * dt;
+    move(ds);
+    if (position.x + size.x/2 < 0) {
+      removeFromParent();
+    }
+  }
+
+  void move(Vector2 ds) {
+    position.add(ds);
   }
 }
