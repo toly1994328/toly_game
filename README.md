@@ -1,16 +1,9 @@
-# toly_game
+这是一套 [张风捷特烈](https://juejin.cn/user/149189281194766/posts) 出品的 `Flutter&Flame` 系列教程，发布于掘金社区。如果你在其他平台看到本文，可以根据对于链接移步到掘金中查看。因为文章可能会更新、修正，一切以掘金文章版本为准。本系列文章一览：
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [【Flutter&Flame 游戏 - 壹】开启新世界的大门 ](https://juejin.cn/post/7101820057612713992)
+- [【Flutter&Flame 游戏 - 贰】操纵杆与角色移动](https://juejin.cn/post/7102192145380950053)
+- [【Flutter&Flame 游戏 - 叁】键盘事件与手势操作](https://juejin.cn/post/7102564285372432397)
+- [【Flutter&Flame 游戏 - 肆】精灵图片加载方式 ](https://juejin.cn/post/7102959875642097694)
+- [【Flutter&Flame 游戏 - 伍】Canvas 参上 | 角色的血条](https://juejin.cn/post/7103318091844730893) 
+ 
+- `未完待续`
