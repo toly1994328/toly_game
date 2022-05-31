@@ -7,6 +7,8 @@ import 'package:flame/sprite.dart';
 class Adventurer extends SpriteAnimationComponent with HasGameRef {
   Adventurer() : super(size: Vector2(50, 37), anchor: Anchor.center);
 
+
+
   @override
   Future<void> onLoad() async {
     List<Sprite> sprites = [];

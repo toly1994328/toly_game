@@ -1,12 +1,9 @@
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 
-import 'component.dart';
+import 'touch_indicator.dart';
 
 class TolyGame extends FlameGame with TapDetector, PanDetector {
-  // @override
-  // Future<void> onLoad() async {
-  // }
 
   @override
   void onPanDown(DragDownInfo info) {
@@ -14,9 +11,9 @@ class TolyGame extends FlameGame with TapDetector, PanDetector {
   }
 
   double ds = 0;
-
   @override
   void onPanUpdate(DragUpdateInfo info) {
+    // add(TouchIndicator(position: info.eventPosition.global));
     ds += info.delta.global.length;
     if (ds > 10) {
       add(TouchIndicator(position: info.eventPosition.global));

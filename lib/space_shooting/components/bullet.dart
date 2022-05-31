@@ -10,7 +10,7 @@ class Bullet extends SpriteComponent{
   @override
   void update(double dt) {
     super.update(dt);
-    position.add(Vector2(0, -1) * _speed * dt);
+    position.add(Vector2(1, 0) * _speed * dt);
     if(position.y<0){
       removeFromParent();
     }

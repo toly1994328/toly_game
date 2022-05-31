@@ -19,6 +19,19 @@ class TolyGame extends FlameGame with TapDetector, PanDetector {
 
 
   @override
+  void onPanEnd(DragEndInfo info) {
+    if(_lastPointerPos!=null){
+      player.toTarget(_lastPointerPos!);
+      _lastPointerPos = null;
+    }
+  }
+
+  @override
+  void onPanStart(DragStartInfo info) {
+    _lastPointerPos=info.eventPosition.global;
+  }
+
+  @override
   void onPanDown(DragDownInfo info) {
     Vector2 target = info.eventPosition.global;
     add(TouchIndicator(position: target));
@@ -26,9 +39,11 @@ class TolyGame extends FlameGame with TapDetector, PanDetector {
   }
 
   double ds = 0;
+  Vector2? _lastPointerPos;
 
   @override
   void onPanUpdate(DragUpdateInfo info) {
+    _lastPointerPos = info.eventPosition.global;
     ds += info.delta.global.length;
     if (ds > 10) {
       add(TouchIndicator(position: info.eventPosition.global));
