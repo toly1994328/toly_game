@@ -6,7 +6,7 @@ import 'game.dart';
 
 main() {
   runApp(GameWidget(game: TolyGame(),));
-  DesktopWindow.setWindowSize(Size(700,300));
+  DesktopWindow.setWindowSize(const Size(700,300));
 }
 
 

@@ -25,5 +25,18 @@ linter:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
+analyzer:
+  exclude:
+    - lib/base_course/01/**
+    - lib/base_course/02/**
+    - lib/base_course/03/**
+    - lib/base_course/04/**
+    - lib/base_course/05/**
+    - lib/base_course/06/**
+    - lib/base_course/07/**
+    - lib/base_course/08/**
+    - lib/base_course/09/**
+    - lib/space_shooting/**
+
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
