@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flame/components.dart';
+import 'package:flutter/material.dart';
 
 class Bullet extends SpriteComponent {
   double _speed = 200;

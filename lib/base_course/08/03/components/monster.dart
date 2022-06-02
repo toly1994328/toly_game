@@ -21,13 +21,11 @@ class Monster extends SpriteAnimationComponent with Liveable {
   @override
   void onDied() {
     removeFromParent();
-
   }
 
   @override
   Future<void> onLoad() async {
     initPaint(lifePoint: 4000);
-    // add(RectangleHitbox()..debugMode = true);
   }
 
   void move(Vector2 ds) {

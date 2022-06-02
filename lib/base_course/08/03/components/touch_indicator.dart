@@ -2,7 +2,12 @@ import 'package:flame/components.dart';
 
 class TouchIndicator extends SpriteAnimationComponent {
 
-  TouchIndicator({required Vector2 position}) : super(size: Vector2(30,30), anchor: Anchor.center,position: position);
+  TouchIndicator({required Vector2 position})
+      : super(
+          size: Vector2(30, 30),
+          anchor: Anchor.center,
+          position: position,
+        );
 
   @override
   Future<void> onLoad() async {

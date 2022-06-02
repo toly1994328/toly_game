@@ -6,6 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame_ext/flame_ext.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
@@ -46,6 +47,19 @@ class TolyGame extends FlameGame with KeyboardEvents,PanDetector {
         animation: animation, size: monsterSize, position: Vector2(pX, pY));
     add(monster);
   }
+
+  // @override
+  // void render(Canvas canvas) {
+  //   super.render(canvas);
+  //   final Iterable<Bullet> bullets = children.whereType<Bullet>();
+  //     if(bullets.isNotEmpty){
+  //       canvas.drawCircle(bullets.first.absoluteCenter.toOffset(),5,
+  //           Paint()
+  //             ..style = PaintingStyle.stroke
+  //             ..strokeWidth=1
+  //             ..color = Colors.blue);
+  //     }
+  // }
 
   @override
   void update(double dt){
