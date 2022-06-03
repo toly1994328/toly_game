@@ -4,6 +4,10 @@
 - [【Flutter&Flame 游戏 - 贰】操纵杆与角色移动](https://juejin.cn/post/7102192145380950053)
 - [【Flutter&Flame 游戏 - 叁】键盘事件与手势操作](https://juejin.cn/post/7102564285372432397)
 - [【Flutter&Flame 游戏 - 肆】精灵图片加载方式 ](https://juejin.cn/post/7102959875642097694)
-- [【Flutter&Flame 游戏 - 伍】Canvas 参上 | 角色的血条](https://juejin.cn/post/7103318091844730893) 
+- [【Flutter&Flame 游戏 - 伍】Canvas 参上 | 角色的血条](https://juejin.cn/post/7103318091844730893)
+- [【Flutter&Flame 游戏 - 陆】暴击 Dash  | 文字构件的使用](https://juejin.cn/post/7103690366536122399)
+- [【Flutter&Flame 游戏 - 柒】人随指动 | 动画点触与移动](https://juejin.cn/post/7104069806776647710)
+- [【Flutter&Flame 游戏 - 捌】装弹完毕 | 角色武器发射 ](https://juejin.cn/post/7104429099518525470)
+- [【Flutter&Flame 游戏 - 玖】探索构件 | Component 是什么](https://juejin.cn/post/7104799155721568293/)
  
 - `未完待续`
