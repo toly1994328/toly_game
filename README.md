@@ -7,7 +7,8 @@
 - [【Flutter&Flame 游戏 - 伍】Canvas 参上 | 角色的血条](https://juejin.cn/post/7103318091844730893)
 - [【Flutter&Flame 游戏 - 陆】暴击 Dash  | 文字构件的使用](https://juejin.cn/post/7103690366536122399)
 - [【Flutter&Flame 游戏 - 柒】人随指动 | 动画点触与移动](https://juejin.cn/post/7104069806776647710)
-- [【Flutter&Flame 游戏 - 捌】装弹完毕 | 角色武器发射 ](https://juejin.cn/post/7104429099518525470)
-- [【Flutter&Flame 游戏 - 玖】探索构件 | Component 是什么](https://juejin.cn/post/7104799155721568293/)
- 
+- [【Flutter&Flame游戏 - 捌】装弹完毕 | 角色武器发射 ](https://juejin.cn/post/7104429099518525470)
+- [【Flutter&Flame游戏 - 玖】探索构件 | Component 是什么](https://juejin.cn/post/7104799155721568293/)
+- [【Flutter&Flame游戏 - 拾】探索构件 | Component 生命周期回调](https://juejin.cn/post/7105187089448501285)
+- [【Flutter&Flame游戏 - 拾壹】探索构件 | Component 使用细节](https://juejin.cn/post/7105584277143699470/)
 - `未完待续`
