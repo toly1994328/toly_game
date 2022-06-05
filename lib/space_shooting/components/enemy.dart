@@ -12,11 +12,11 @@ class Enemy extends SpriteComponent with HasGameRef, CollisionCallbacks {
   @override
   void onMount(){
     super.onMount();
-    final ShapeHitbox hitbox = CircleHitbox();
+    double rate = 0.5;
+    final ShapeHitbox hitbox = CircleHitbox.relative(rate, parentSize: size,position:size/2-size*rate/2);
     hitbox.debugMode = true;
     add(hitbox);
   }
-
 
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {

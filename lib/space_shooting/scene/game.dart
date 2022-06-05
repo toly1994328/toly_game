@@ -17,7 +17,8 @@ class SpaceShooting extends FlameGame with TapDetector,PanDetector,HasCollisionD
   late final EnemyManager _enemyManager;
 
   late final SpriteSheet _sheet;
-late final Sprite bulletSprite;
+  late final Sprite bulletSprite;
+
   @override
   Future<void> onLoad() async {
     const String src = 'space_shooting/simpleSpace_tilesheet@2.png';
