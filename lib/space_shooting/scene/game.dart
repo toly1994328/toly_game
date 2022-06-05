@@ -11,7 +11,7 @@ import 'package:toly_game/space_shooting/manager/enemy_manager.dart';
 
 import '../components/ship.dart';
 
-class SpaceShooting extends FlameGame with TapDetector,PanDetector  {
+class SpaceShooting extends FlameGame with TapDetector,PanDetector,HasCollisionDetection  {
   late final Ship ship;
   final double step = 10;
   late final EnemyManager _enemyManager;
@@ -22,43 +22,15 @@ late final Sprite bulletSprite;
   Future<void> onLoad() async {
     const String src = 'space_shooting/simpleSpace_tilesheet@2.png';
     await images.load(src);
-    bulletSprite = await Sprite.load('adventurer/weapon_arrow.png');
 
     Image image = images.fromCache(src);
     _sheet = SpriteSheet.fromColumnsAndRows(image: image, columns: 8, rows: 6);
     ship = Ship(sprite: _sheet.getSpriteById(6));
+    bulletSprite = _sheet.getSpriteById(28);
+
     add(ship);
     _enemyManager = EnemyManager(sheet: _sheet);
     add(_enemyManager);
-  }
-
-  @override
-  void update(double dt){
-    super.update(dt);
-    final Iterable<Bullet> bullets = children.whereType<Bullet>();
-    final Iterable<Enemy> enemies = _enemyManager.children.whereType<Enemy>();
-
-    for(Enemy enemy in enemies){
-      if(enemy.shouldRemove){
-        continue;
-      }
-
-      for(Bullet bullet in bullets){
-        if(bullet.shouldRemove){
-          continue;
-        }
-
-        if(enemy.containsPoint(bullet.absoluteCenter)){
-          enemy.removeFromParent();
-          bullet.removeFromParent();
-          break;
-        }
-      }
-
-      if(ship.containsPoint(enemy.absolutePosition)){
-        continue;
-      }
-    }
   }
 
   @override
@@ -73,6 +45,4 @@ late final Sprite bulletSprite;
   void onPanUpdate(DragUpdateInfo info) {
     ship.move(info.delta.global);
   }
-
-
 }
