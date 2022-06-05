@@ -65,6 +65,8 @@ flutter:
     - assets/images/adventurer/
     - assets/images/touch/
     - assets/images/space_shooting/
+    - assets/images/adventurer/skill01/
+    - assets/images/adventurer/skill02/
     - assets/audio/
 
   # An image asset can refer to one or more resolution-specific "variants", see
