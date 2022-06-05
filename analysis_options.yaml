@@ -38,6 +38,8 @@ analyzer:
     - lib/base_course/09/**
     - lib/base_course/10/**
     - lib/base_course/11/**
+    - lib/base_course/12/**
+
     - lib/space_shooting/**
 
 # Additional information about this file can be found at
