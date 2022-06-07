@@ -39,6 +39,7 @@ analyzer:
     - lib/base_course/10/**
     - lib/base_course/11/**
     - lib/base_course/12/**
+    - lib/base_course/13/**
 
 #    - lib/space_shooting/**
 

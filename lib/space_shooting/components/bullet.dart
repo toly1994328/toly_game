@@ -14,7 +14,7 @@ class Bullet extends SpriteComponent with CollisionCallbacks{
     super.onMount();
     double rate = 0.3;
     final ShapeHitbox hitbox = CircleHitbox.relative(rate, parentSize: size,position:size/2-size*rate/2);
-    hitbox.debugMode = true;
+    // hitbox.debugMode = true;
     add(hitbox);
   }
 
