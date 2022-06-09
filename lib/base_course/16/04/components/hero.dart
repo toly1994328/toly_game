@@ -33,6 +33,7 @@ class HeroComponent extends PositionComponent with HasGameRef, CollisionCallback
   late LifeComponent lifeComponent;
   bool isLeft = true;
 
+  // late Sprite bulletSprite;
   late SpriteAnimation bulletAnimation;
 
   final SpriteAnimation spriteAnimation;
@@ -65,14 +66,8 @@ class HeroComponent extends PositionComponent with HasGameRef, CollisionCallback
   }
 
   void addHitbox(){
-    Vector2 boxSize = Vector2(size.x*0.5, size.y*0.8);
-    double offsetFixY = -size.y*0.11;
-    ShapeHitbox hitbox = RectangleHitbox(
-      size: boxSize,
-      anchor: Anchor.center,
-      position: size/2-Vector2(0,offsetFixY)
-    );
-    hitbox.debugMode = true;
+    ShapeHitbox hitbox = RectangleHitbox();
+    // hitbox.debugMode = true;
     add(hitbox);
   }
 

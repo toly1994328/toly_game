@@ -40,8 +40,12 @@ analyzer:
     - lib/base_course/11/**
     - lib/base_course/12/**
     - lib/base_course/13/**
+    - lib/base_course/14/**
+    - lib/base_course/15/**
+    - lib/base_course/16/**
+    - lib/base_course/17/**
 
-#    - lib/space_shooting/**
+    - lib/space_shooting/**
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
