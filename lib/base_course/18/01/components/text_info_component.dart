@@ -29,6 +29,7 @@ class TextInfoComponent extends PositionComponent{
     'q 透明度加了 OpacityEffect.by\n'
     'w 透明度到 OpacityEffect.to\n'
     'e 颜色特效 ColorEffect\n'
+    'r 沿路径运动 MoveAlongPathEffect\n'
 
     ;
     add(damageText);

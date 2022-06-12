@@ -23,7 +23,7 @@ class TolyGame extends FlameGame with KeyboardEvents {
       position: Vector2(10,10)
     );
     add(textInfo);
-    player.add(RectangleHitbox()..debugMode=true);
+    // player.add(RectangleHitbox()..debugMode=true);
     add(player);
   }
 
@@ -35,39 +35,41 @@ class TolyGame extends FlameGame with KeyboardEvents {
     final isKeyDown = event is RawKeyDownEvent;
 
     if (event.logicalKey == LogicalKeyboardKey.digit1 && isKeyDown) {
-      addMoveByEffect();
+      linearEffectController();
+    }    if (event.logicalKey == LogicalKeyboardKey.digit2 && isKeyDown) {
+      curvedEffectController();
     }
-    if (event.logicalKey == LogicalKeyboardKey.digit2 && isKeyDown) {
-      addMoveToEffect();
+    if (event.logicalKey == LogicalKeyboardKey.digit0 && isKeyDown) {
+      resetPosition();
     }
     if (event.logicalKey == LogicalKeyboardKey.digit3 && isKeyDown) {
-      addRotateEffectBy();
+      reverseLinearEffectController();
     }
     if (event.logicalKey == LogicalKeyboardKey.digit4 && isKeyDown) {
-      addRotateEffectTo();
+      reverseCurvedEffectController();
     }
 
     if (event.logicalKey == LogicalKeyboardKey.digit5 && isKeyDown) {
-      addScaleEffectBy();
+      sineEffectController();
     }
     if (event.logicalKey == LogicalKeyboardKey.digit6 && isKeyDown) {
-      addScaleEffectTo();
+      noiseEffectController();
     }
 
     if (event.logicalKey == LogicalKeyboardKey.digit7 && isKeyDown) {
-      addRemoveEffect();
+      zigzagEffectController();
     }
 
     if (event.logicalKey == LogicalKeyboardKey.digit8 && isKeyDown) {
-      addSizeEffectBy();
+      delayedEffectController();
     }
 
     if (event.logicalKey == LogicalKeyboardKey.digit9 && isKeyDown) {
-      addSizeEffectTo();
+      repeatedEffectController();
     }
 
     if (event.logicalKey == LogicalKeyboardKey.keyQ && isKeyDown) {
-      addOpacityEffectBy();
+      infiniteEffectController();
     }
 
     if (event.logicalKey == LogicalKeyboardKey.keyW && isKeyDown) {
@@ -83,19 +85,112 @@ class TolyGame extends FlameGame with KeyboardEvents {
     return super.onKeyEvent(event, keysPressed);
   }
   //1
-  void addMoveByEffect(){
+  void linearEffectController(){
+    EffectController ctrl = LinearEffectController(2);
     Effect effect = MoveByEffect(
-      Vector2(10, -10),
-      EffectController(duration: 0.5),
+      Vector2(0, -100),
+      ctrl,
     );
-    effect.onFinishCallback =(){
-      print('=====onFinishCallback========');
-    };
     player.add(effect);
   }
 
   //2
-  void addMoveToEffect(){
+  void curvedEffectController(){
+    EffectController ctrl = CurvedEffectController(2,Curves.ease);
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  //3
+  void reverseLinearEffectController(){
+    EffectController ctrl = ReverseLinearEffectController(2);
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  //4
+  void reverseCurvedEffectController(){
+    EffectController ctrl = ReverseCurvedEffectController(2,Curves.ease);
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  // 5
+  void sineEffectController(){
+    EffectController ctrl = SineEffectController(period: 2);
+
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  //6
+  void noiseEffectController(){
+    EffectController ctrl = NoiseEffectController(frequency: 30,duration: 1);
+    Effect effect = MoveByEffect(
+      Vector2(4, 0),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  //7
+  void zigzagEffectController(){
+    EffectController ctrl = ZigzagEffectController(period: 2);
+    Effect effect = MoveByEffect(
+      Vector2(50, 0),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  //8
+  void delayedEffectController(){
+    EffectController child = CurvedEffectController(2,Curves.ease);
+    EffectController ctrl = DelayedEffectController(child,delay: 2);
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  // 9
+  void repeatedEffectController(){
+    EffectController child = SineEffectController(period: 0.1);
+    EffectController ctrl2 = RepeatedEffectController(child,5);
+    Effect effect = MoveByEffect(
+      Vector2(-2, 0),
+      ctrl2,
+    );
+    player.add(effect);
+  }
+
+  // q
+  void infiniteEffectController(){
+    EffectController child = SineEffectController(period: 0.1);
+    EffectController ctrl2 = InfiniteEffectController(child);
+    Effect effect = MoveByEffect(
+      Vector2(-2, 0),
+      ctrl2,
+    );
+    player.add(effect);
+  }
+
+  //0
+  void resetPosition(){
+    player.removeAll(player.children.whereType<Effect>());
     Effect effect = MoveToEffect(
       size / 2,
       EffectController(duration: 0.5),
@@ -207,19 +302,4 @@ class TolyGame extends FlameGame with KeyboardEvents {
   Path path = Path()..quadraticBezierTo(50, -50, 100, 0);
   int curveMoveCount = 0;
 
-  @override
-  void render(Canvas canvas) {
-
-    super.render(canvas);
-    canvas.save();
-    canvas.translate(size.x/2+curveMoveCount*100, size.y/2);
-    canvas.drawPath(
-      path,
-      Paint()
-        ..strokeWidth = 1
-        ..color = Colors.white
-        ..style = PaintingStyle.stroke,
-    );
-    canvas.restore();
-  }
 }
