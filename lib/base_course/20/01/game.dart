@@ -73,13 +73,13 @@ class TolyGame extends FlameGame with KeyboardEvents {
     }
 
     if (event.logicalKey == LogicalKeyboardKey.keyW && isKeyDown) {
-      addOpacityEffectTo();
+      randomEffectController();
     }
     if (event.logicalKey == LogicalKeyboardKey.keyE && isKeyDown) {
-      addColorEffect();
+      speedEffectController();
     }
     if (event.logicalKey == LogicalKeyboardKey.keyR && isKeyDown) {
-      addMoveAlongPathEffect();
+      sequenceEffectController();
     }
 
     return super.onKeyEvent(event, keysPressed);
@@ -188,6 +188,46 @@ class TolyGame extends FlameGame with KeyboardEvents {
     player.add(effect);
   }
 
+  // w
+  void randomEffectController(){
+    DurationEffectController child = LinearEffectController(2);
+    EffectController ctrl = RandomEffectController.uniform(child,max: 3,min: 1);
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+
+
+  // e
+  void speedEffectController(){
+    DurationEffectController child = LinearEffectController(2);
+    EffectController ctrl = SpeedEffectController(child,speed: 10);
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
+  // r
+  void sequenceEffectController(){
+    DurationEffectController child1 = LinearEffectController(2);
+    EffectController child2 = ZigzagEffectController(period: 2);
+    EffectController child3 = CurvedEffectController(2,Curves.ease);
+    EffectController ctrl = SequenceEffectController([
+      child1,child2,child3
+    ]);
+
+    Effect effect = MoveByEffect(
+      Vector2(0, -100),
+      ctrl,
+    );
+    player.add(effect);
+  }
+
   //0
   void resetPosition(){
     player.removeAll(player.children.whereType<Effect>());
@@ -197,109 +237,5 @@ class TolyGame extends FlameGame with KeyboardEvents {
     );
     player.add(effect);
   }
-
-  //3
-  void addRotateEffectBy(){
-    Effect effect = RotateEffect.by(
-      15/180*pi,
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //4
-  void addRotateEffectTo(){
-    Effect effect = RotateEffect.to(
-      0,
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //5
-  void addScaleEffectBy(){
-    Effect effect = ScaleEffect.by(
-      Vector2(1.2,1.2),
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //6
-  void addScaleEffectTo(){
-    Effect effect = ScaleEffect.to(
-      Vector2(1,1),
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //7
-  void addRemoveEffect(){
-    Effect effect = RemoveEffect(
-      delay:3
-    );
-    player.add(effect);
-  }
-
-  //8
-  void addSizeEffectBy(){
-    Effect effect = SizeEffect.by(
-      Vector2(5,5*(37/50)),
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //9
-  void addSizeEffectTo(){
-    Effect effect = SizeEffect.to(
-      Vector2(50, 37),
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //q
-  void addOpacityEffectBy(){
-    Effect effect = OpacityEffect.by(
-      -0.1,
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-  //w
-  void addOpacityEffectTo(){
-    Effect effect = OpacityEffect.to(
-      1,
-      EffectController(duration: 0.5),
-    );
-    player.add(effect);
-  }
-
-  //e
-  void addColorEffect() {
-    final Effect effect = ColorEffect(
-      Colors.blue,
-      const Offset(0.0, 0.4),
-      EffectController(duration: 1),
-    );
-    player.add(effect);
-  }
-
-  //e
-  void addMoveAlongPathEffect() {
-    final Effect effect = MoveAlongPathEffect(
-      path,
-      EffectController(duration: 1.5),
-    );
-    effect.onFinishCallback=(){
-      curveMoveCount++;
-    };
-    player.add(effect);
-  }
-
-  Path path = Path()..quadraticBezierTo(50, -50, 100, 0);
-  int curveMoveCount = 0;
 
 }

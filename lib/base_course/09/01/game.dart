@@ -94,7 +94,7 @@ class TolyGame extends FlameGame with KeyboardEvents,PanDetector {
     super.update(dt);
     final Iterable<Bullet> bullets = children.whereType<Bullet>();
     for(Bullet bullet in bullets){
-      if(bullet.shouldRemove){
+      if(bullet.isRemoving){
         continue;
       }
       if(monster.containsPoint(bullet.absoluteCenter)){

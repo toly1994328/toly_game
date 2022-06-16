@@ -2,7 +2,7 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flutter/material.dart';
-import 'package:toly_game/base_course/14/01/components/anim_bullet.dart';
+import 'anim_bullet.dart';
 
 import 'adventurer.dart';
 import 'life.dart';

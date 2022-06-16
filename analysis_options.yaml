@@ -27,25 +27,28 @@ linter:
 
 analyzer:
   exclude:
-    - lib/base_course/01/**
-    - lib/base_course/02/**
-    - lib/base_course/03/**
-    - lib/base_course/04/**
-    - lib/base_course/05/**
-    - lib/base_course/06/**
-    - lib/base_course/07/**
-    - lib/base_course/08/**
-    - lib/base_course/09/**
-    - lib/base_course/10/**
-    - lib/base_course/11/**
-    - lib/base_course/12/**
-    - lib/base_course/13/**
-    - lib/base_course/14/**
-    - lib/base_course/15/**
-    - lib/base_course/16/**
-    - lib/base_course/17/**
+#    - lib/base_course/01/**
+#    - lib/base_course/02/**
+#    - lib/base_course/03/**
+#    - lib/base_course/04/**
+#    - lib/base_course/05/**
+#    - lib/base_course/06/**
+#    - lib/base_course/07/**
+#    - lib/base_course/08/**
+#    - lib/base_course/09/**
+#    - lib/base_course/10/**
+#    - lib/base_course/11/**
+#    - lib/base_course/12/**
+#    - lib/base_course/13/**
+#    - lib/base_course/14/**
+#    - lib/base_course/15/**
+#    - lib/base_course/16/**
+#    - lib/base_course/17/**
+#    - lib/base_course/18/**
+#    - lib/base_course/19/**
 
-    - lib/space_shooting/**
+
+#    - lib/space_shooting/**
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

@@ -29,12 +29,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flame: ^1.1.1
-  flame_audio: ^1.0.2
+  flame: ^1.2.0
+  flame_audio: ^1.2.0
   desktop_window: ^0.4.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  google_fonts: ^3.0.1
   flame_ext:
     path: packages/flame_ext
 
@@ -64,6 +65,7 @@ flutter:
   assets:
     - assets/images/adventurer/
     - assets/images/touch/
+    - assets/images/parallax/
     - assets/images/space_shooting/
     - assets/images/adventurer/skill01/
     - assets/images/adventurer/skill02/
@@ -80,11 +82,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: ZCOOLKuaiLe
+      fonts:
+        - asset: assets/fonts/ZCOOLKuaiLe/ZCOOLKuaiLe-Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
