@@ -1,6 +1,7 @@
 import 'package:desktop_window/desktop_window.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:toly_game/base_course/22/02/menu/pause.dart';
 import 'app/key.dart';
 import 'menu/main.dart';
 
@@ -35,6 +36,10 @@ class GameWorld extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GameWidget(game: TolyGame());
+    return GameWidget<TolyGame>(game: TolyGame(),
+      overlayBuilderMap:  {
+        PauseMenu.menuId: (_,game) => PauseMenu(game: game),
+      },
+    );
   }
 }

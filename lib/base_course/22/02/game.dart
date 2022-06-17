@@ -11,6 +11,7 @@ import 'components/hero.dart';
 import 'components/manager/monster_manager.dart';
 import 'components/monster.dart';
 import 'components/touch_indicator.dart';
+import 'menu/pause.dart';
 
 class TolyGame extends FlameGame with HasCollisionDetection,KeyboardEvents, PanDetector {
   late final HeroComponent player;
@@ -128,8 +129,10 @@ class TolyGame extends FlameGame with HasCollisionDetection,KeyboardEvents, PanD
   void toggleGameState(){
     if(paused){
       resumeEngine();
+      overlays.remove(PauseMenu.menuId);
     }else{
       pauseEngine();
+      overlays.add(PauseMenu.menuId);
     }
   }
 
