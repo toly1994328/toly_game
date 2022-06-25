@@ -1,35 +1,34 @@
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
-import 'package:flame/palette.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:toly_game/base_course/02/game.dart';
+import 'package:toly_game/base_course/23/gen/assets.gen.dart';
 
 import 'components/anim_bullet.dart';
 import 'components/hero.dart';
 import 'components/manager/monster_manager.dart';
 import 'components/monster.dart';
 import 'components/touch_indicator.dart';
+import 'menu/pause.dart';
 
-class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,KeyboardEvents, PanDetector  {
+class TolyGame extends FlameGame
+    with HasCollisionDetection, KeyboardEvents, PanDetector {
   late final HeroComponent player;
   final double step = 10;
-   final TextPainter painter = TextPainter();
-  @override
-  void render(Canvas canvas) {
-    super.render(canvas);
-    final fpsCount = fps(120); // 在过去120微秒内的平均FPS
-    // painter.
-    // print(fpsCount);
-    // fpsTextConfig.render(canvas, fpsCount.toString(), Vector2(0, 50));
+
+  TolyGame() {
+    images.prefix = '';
   }
 
   void addHero() async {
     List<Sprite> sprites = [];
     for (int i = 0; i <= 8; i++) {
-      sprites.add(await loadSprite('adventurer/adventurer-bow-0$i.png'));
+      sprites.add(
+          await loadSprite('assets/images/adventurer/adventurer-bow-0$i.png'));
     }
     SpriteAnimation animation =
         SpriteAnimation.spriteList(sprites, stepTime: 0.1, loop: false);
@@ -44,8 +43,10 @@ class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,Keyboard
       critDamage: 1.5,
     );
 
-    Sprite bulletSprite = await loadSprite('adventurer/weapon_arrow.png');
-    SpriteAnimation bulletAnimation = SpriteAnimation.spriteList([bulletSprite], stepTime: 0.1, loop: false);
+    Sprite bulletSprite =
+        await loadSprite('assets/images/adventurer/weapon_arrow.png');
+    SpriteAnimation bulletAnimation =
+        SpriteAnimation.spriteList([bulletSprite], stepTime: 0.1, loop: false);
 
     player = HeroComponent(
       initPosition: size / 2,
@@ -62,7 +63,7 @@ class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,Keyboard
   @override
   Future<void> onLoad() async {
     addHero();
-    const String src = 'adventurer/animatronic.png';
+    String src = Assets.images.adventurer.animatronic.keyName;
     await images.load(src);
     var image = images.fromCache(src);
     SpriteSheet bossSheet = SpriteSheet.fromColumnsAndRows(
@@ -71,7 +72,7 @@ class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,Keyboard
       rows: 6,
     );
 
-    const String src2 = 'adventurer/Characters-part-2.png';
+    String src2 = Assets.images.adventurer.charactersPart2.keyName;
     await images.load(src2);
     var image2 = images.fromCache(src2);
 
@@ -83,14 +84,15 @@ class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,Keyboard
 
     List<Sprite> sprites = [];
     for (int i = 0; i <= 28; i++) {
-      sprites.add(await loadSprite('adventurer/skill02/$i.png'));
+      sprites.add(await loadSprite('assets/images/adventurer/skill02/s$i.png'));
     }
     SpriteAnimation bossBullet =
         SpriteAnimation.spriteList(sprites, stepTime: 0.1);
 
     List<Sprite> sprites2 = [];
     for (int i = 1; i <= 4; i++) {
-      sprites2.add(await loadSprite('adventurer/skill01/ef0$i.png'));
+      sprites2
+          .add(await loadSprite('assets/images/adventurer/skill01/ef0$i.png'));
     }
     SpriteAnimation stoneBullet =
         SpriteAnimation.spriteList(sprites2, stepTime: 0.1);
@@ -135,11 +137,13 @@ class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,Keyboard
     }
   }
 
-  void toggleGameState(){
-    if(paused){
+  void toggleGameState() {
+    if (paused) {
       resumeEngine();
-    }else{
+      overlays.remove(PauseMenu.menuId);
+    } else {
       pauseEngine();
+      overlays.add(PauseMenu.menuId);
     }
   }
 
@@ -163,6 +167,7 @@ class TolyGame extends FlameGame with FPSCounter, HasCollisionDetection,Keyboard
         event.logicalKey == LogicalKeyboardKey.keyW && isKeyDown) {
       player.move(Vector2(0, -step));
     }
+
     if (event.logicalKey == LogicalKeyboardKey.arrowDown ||
         event.logicalKey == LogicalKeyboardKey.keyS && isKeyDown) {
       player.move(Vector2(0, step));

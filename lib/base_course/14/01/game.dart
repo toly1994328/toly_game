@@ -73,7 +73,7 @@ class TolyGame extends FlameGame with HasCollisionDetection,KeyboardEvents, PanD
 
     List<Sprite> sprites = [];
     for (int i = 0; i <= 28; i++) {
-      sprites.add(await loadSprite('adventurer/skill02/$i.png'));
+      sprites.add(await loadSprite('adventurer/skill02/s$i.png'));
     }
     SpriteAnimation bossBullet =
         SpriteAnimation.spriteList(sprites, stepTime: 0.1);

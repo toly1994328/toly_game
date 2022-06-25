@@ -1,6 +1,6 @@
 import 'package:flame/components.dart';
 
-class TouchIndicator extends SpriteAnimationComponent {
+class TouchIndicator extends SpriteAnimationComponent with HasGameRef {
 
   TouchIndicator({required Vector2 position})
       : super(
@@ -11,9 +11,10 @@ class TouchIndicator extends SpriteAnimationComponent {
 
   @override
   Future<void> onLoad() async {
+
     List<Sprite> sprites = [];
     for(int i=1;i<=10;i++){
-      sprites.add(await Sprite.load('touch/star_${'$i'.padLeft(2,'0')}.png'));
+      sprites.add(await gameRef.loadSprite('assets/images/touch/star_${'$i'.padLeft(2,'0')}.png'));
     }
     removeOnFinish = true;
     animation = SpriteAnimation.spriteList(sprites, stepTime: 1/15,loop: false);
