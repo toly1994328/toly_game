@@ -20,4 +20,11 @@ extension SpriteSheetExt on SpriteSheet {
     count ??= columns * rows;
     return List.generate(count, (i) => getSpriteById(start + i)).toList();
   }
+
+  /// 获取指定索引的 [Sprite] 列表
+  /// [indexList] : 索引数组
+  List<Sprite> getSpritesByIndex({required List<int> indexList}) {
+    return List.generate(indexList.length, (i) => getSpriteById(indexList[i]))
+        .toList();
+  }
 }
