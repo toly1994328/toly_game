@@ -1,12 +1,12 @@
 import 'package:flame/game.dart';
-import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 
-import 'base_course/02/game.dart';
+import 'trex/01/trex_game.dart';
+
+
 
 main() {
-  runApp(GameWidget(game: TolyGame()));
-  // FlameAudio.play('background.mp3');
+  runApp(GameWidget(game: TrexGame()));
 }
 
 
