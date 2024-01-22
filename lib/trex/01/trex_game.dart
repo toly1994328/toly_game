@@ -1,28 +1,27 @@
 import 'dart:ui';
-
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
-import 'package:flame/input.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' hide Image;
 
-
+import 'heroes/help_text.dart';
 import 'heroes/player.dart';
 
-class TrexGame extends FlameGame  with KeyboardEvents, TapCallbacks{
-
+class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
   late final Image spriteImage;
 
-  late final player = Player();
+  late final Player player = Player();
+  late final HelpText helpText;
 
   @override
-  Future<void> onLoad() async{
-
+  Future<void> onLoad() async {
     spriteImage = await Flame.images.load('trex/trex.png');
     add(player);
-
+    String initState = player.current.toString();
+    helpText = HelpText(initState);
+    add(helpText);
   }
 
   @override
@@ -32,15 +31,14 @@ class TrexGame extends FlameGame  with KeyboardEvents, TapCallbacks{
 
   @override
   KeyEventResult onKeyEvent(
-      RawKeyEvent event,
-      Set<LogicalKeyboardKey> keysPressed,
-      ) {
+    RawKeyEvent event,
+    Set<LogicalKeyboardKey> keysPressed,
+  ) {
     if (keysPressed.contains(LogicalKeyboardKey.keyA)) {
-      // onAction();
       player.toggleState();
+      helpText.changeState(player.current.toString());
     }
     if (keysPressed.contains(LogicalKeyboardKey.keyD)) {
-      // onAction();
       player.toggleDebugMode();
     }
     return KeyEventResult.handled;
@@ -49,5 +47,6 @@ class TrexGame extends FlameGame  with KeyboardEvents, TapCallbacks{
   @override
   void onTapDown(TapDownEvent event) {
     player.toggleState();
+    helpText.changeState(player.current.toString());
   }
 }
