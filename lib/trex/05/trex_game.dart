@@ -7,33 +7,30 @@ import 'package:flutter/widgets.dart' hide Image;
 
 import 'heroes/cloud_component.dart';
 import 'heroes/ground_component.dart';
-import 'heroes/help_text.dart';
 import 'heroes/obstacle_component.dart';
 import 'heroes/player.dart';
 import 'heroes/score_component.dart';
 
-class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
+class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks, HasCollisionDetection  {
+  double moveSpeed = 0;
 
   late final Image spriteImage;
   late final Player player = Player();
    final ScoreComponent score = ScoreComponent();
+   final GroundComponent ground = GroundComponent();
+   final CloudManager cloudManager = CloudManager();
+   final ObstacleManager obstacleManager = ObstacleManager();
 
   @override
   Future<void> onLoad() async {
     spriteImage = await Flame.images.load('trex/trex.png');
-    add(CloudComponent());
-    add(GroundComponent());
-    add(ObstacleComponent());
+    add(cloudManager);
+    add(ground);
+    add(obstacleManager);
     add(player);
-
-
-    String initState = player.current.toString();
-    helpText = HelpText(initState);
-    add(helpText);
     add(score);
   }
 
-  late final HelpText helpText;
 
 
   @override
@@ -46,19 +43,38 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
     RawKeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-    if (keysPressed.contains(LogicalKeyboardKey.keyA)) {
-      player.toggleState();
-      helpText.changeState(player.current.toString());
+
+    if (event is RawKeyUpEvent) {
+      if(event.logicalKey==LogicalKeyboardKey.arrowDown){
+        player.running();
+      }
+    }
+    if (keysPressed.contains(LogicalKeyboardKey.keyI)) {
+      print("======obstacleManager:${obstacleManager.children.length}=====cloudManager:${cloudManager.children.length}========");
+    }
+    if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
+      player.down();
     }
     if (keysPressed.contains(LogicalKeyboardKey.keyD)) {
       player.toggleDebugMode();
     }
+    if (keysPressed.contains(LogicalKeyboardKey.space)) {
+      player.jump();
+    }
     return KeyEventResult.handled;
   }
 
+
+
   @override
   void onTapDown(TapDownEvent event) {
-    player.toggleState();
-    helpText.changeState(player.current.toString());
+    moveSpeed = 320;
+    // player.toggleState();
+    // ground.run();
+  }
+
+  void gameOver() {
+    moveSpeed = 0;
+    player.current = PlayerState.crashed;
   }
 }

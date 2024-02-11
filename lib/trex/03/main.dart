@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'trex_game.dart';
 
-main() => runApp(GameWidget(game: TrexGame()));
+main() {
+  runApp(GameWidget(game: TrexGame()));
+}
 
 

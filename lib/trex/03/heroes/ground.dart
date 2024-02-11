@@ -26,13 +26,13 @@ class Ground extends PositionComponent with HasGameRef<TrexGame>{
     final newLines = _generateLines();
     groundLayers.addAll(newLines);
     addAll(newLines);
-    y = (size.y / 2) + 21.0;
+    y = size.y - 24  - 40;
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-    final increment = game.moveSpeed * dt;
+    final increment = 500 * dt;
     for (final line in groundLayers) {
       line.x -= increment;
     }

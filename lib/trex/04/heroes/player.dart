@@ -1,6 +1,4 @@
-import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flutter/material.dart';
 
 import '../trex_game.dart';
 
@@ -12,21 +10,51 @@ enum PlayerState {
   crashed, // 死亡
 }
 
-class Player extends SpriteAnimationGroupComponent<PlayerState> with HasGameReference<TrexGame> {
-
+class Player extends SpriteAnimationGroupComponent<PlayerState>
+    with HasGameReference<TrexGame> {
   double get centerY {
     return (game.size.y / 2) - height / 2;
   }
 
+  double initY = 0;
+
   @override
   void onGameResize(Vector2 size) {
     super.onGameResize(size);
-    y = centerY;
+    initY = game.size.y - height - 40;
+    y = initY;
     x = 60;
   }
 
   void toggleDebugMode() {
     debugMode = !debugMode;
+  }
+
+  double vY = 0; // 竖直速度
+  double aY = 9.8 * 200; // 竖直加速度
+  double sY = 0; // 竖直位移
+
+  void jump() {
+    if (current == PlayerState.jumping) {
+      return;
+    }
+    vY = -720;
+    sY = 0;
+    current = PlayerState.jumping;
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    if (current == PlayerState.jumping) {
+      vY += aY * dt;
+      sY += vY * dt;
+      if (sY > 0) {
+        sY = 0;
+        current = PlayerState.running;
+      }
+      y = initY + sY;
+    }
   }
 
   void toggleState() {
@@ -35,12 +63,23 @@ class Player extends SpriteAnimationGroupComponent<PlayerState> with HasGameRefe
     current = PlayerState.values[nextIndex];
   }
 
+  void down() {
+    if(current==PlayerState.running){
+      current = PlayerState.down;
+    }
+  }
+  void running() {
+    if(current!=PlayerState.jumping){
+      current = PlayerState.running;
+    }
+  }
+
   @override
   Future<void> onLoad() async {
     _initAnimations();
   }
 
-  void _initAnimations(){
+  void _initAnimations() {
     animations = {
       PlayerState.running: loadAnimation(
         size: Vector2(88.0, 90.0),
@@ -65,7 +104,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState> with HasGameRefe
         stepTime: 0.2,
       ),
     };
-    current = PlayerState.waiting;
+    current = PlayerState.running;
   }
 
   SpriteAnimation loadAnimation({
@@ -74,11 +113,13 @@ class Player extends SpriteAnimationGroupComponent<PlayerState> with HasGameRefe
     double stepTime = double.infinity,
   }) {
     return SpriteAnimation.spriteList(
-      frames.map((vector) => Sprite(
-              game.spriteImage,
-              srcSize: size,
-              srcPosition: vector,
-            )).toList(),
+      frames
+          .map((vector) => Sprite(
+                game.spriteImage,
+                srcSize: size,
+                srcPosition: vector,
+              ))
+          .toList(),
       stepTime: stepTime,
     );
   }
