@@ -11,15 +11,16 @@ import 'heroes/obstacle_component.dart';
 import 'heroes/player.dart';
 import 'heroes/score_component.dart';
 
-class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks, HasCollisionDetection  {
+class TrexGame extends FlameGame
+    with KeyboardEvents, TapCallbacks, HasCollisionDetection {
   double moveSpeed = 0;
 
   late final Image spriteImage;
   late final Player player = Player();
-   final ScoreComponent score = ScoreComponent();
-   final GroundComponent ground = GroundComponent();
-   final CloudManager cloudManager = CloudManager();
-   final ObstacleManager obstacleManager = ObstacleManager();
+  final ScoreComponent score = ScoreComponent();
+  final GroundComponent ground = GroundComponent();
+  final CloudManager cloudManager = CloudManager();
+  final ObstacleManager obstacleManager = ObstacleManager();
 
   @override
   Future<void> onLoad() async {
@@ -31,46 +32,49 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks, HasCollision
     add(score);
   }
 
-
-
   @override
   Color backgroundColor() {
     return const Color(0xffffffff);
   }
 
   @override
-  KeyEventResult onKeyEvent(
-    RawKeyEvent event,
-    Set<LogicalKeyboardKey> keysPressed,
-  ) {
-
+  KeyEventResult onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     if (event is RawKeyUpEvent) {
-      if(event.logicalKey==LogicalKeyboardKey.arrowDown){
-        player.running();
+      if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+        player.state = PlayerState.running;
       }
     }
-    if (keysPressed.contains(LogicalKeyboardKey.keyI)) {
-      print("======obstacleManager:${obstacleManager.children.length}=====cloudManager:${cloudManager.children.length}========");
-    }
     if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
-      player.down();
-    }
-    if (keysPressed.contains(LogicalKeyboardKey.keyD)) {
-      player.toggleDebugMode();
+      player.state = PlayerState.down;
     }
     if (keysPressed.contains(LogicalKeyboardKey.space)) {
-      player.jump();
+      player.state = PlayerState.jumping;
     }
     return KeyEventResult.handled;
   }
 
-
-
   @override
   void onTapDown(TapDownEvent event) {
-    moveSpeed = 320;
-    // player.toggleState();
-    // ground.run();
+    if (player.current == PlayerState.waiting) {
+      moveSpeed = 320;
+      player.state = PlayerState.running;
+    }
+    if (player.current == PlayerState.running) {
+      if (event.localPosition.x < size.x / 2) {
+        player.state = PlayerState.jumping;
+      } else {
+        player.state = PlayerState.down;
+      }
+    }
+  }
+
+  @override
+  void onTapUp(TapUpEvent event) {
+    super.onTapUp(event);
+    if (event.localPosition.x < size.x / 2) {
+    } else {
+      player.state = PlayerState.running;
+    }
   }
 
   void gameOver() {

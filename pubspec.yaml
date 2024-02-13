@@ -13,9 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
   flame: ^1.14.0
-
+  shared_preferences: ^2.2.2
   cupertino_icons: ^1.0.2
-  google_fonts: ^3.0.1
   flame_ext:
     path: packages/flame_ext
 
@@ -36,19 +35,7 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/adventurer/
-    - assets/images/touch/
     - assets/images/trex/
-    - assets/images/parallax/
-    - assets/images/space_shooting/
-    - assets/images/adventurer/skill01/
-    - assets/images/adventurer/skill02/
-    - assets/audio/
-
-  fonts:
-    - family: ZCOOLKuaiLe
-      fonts:
-        - asset: assets/fonts/ZCOOLKuaiLe/ZCOOLKuaiLe-Regular.ttf
 
 #flutter_gen:
 #  output: lib/base_course/23/gen # 代码生成的路径位置

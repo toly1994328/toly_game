@@ -22,10 +22,9 @@ class ObstacleManager extends PositionComponent
     }
   }
 
-  final Random random = Random(8);
-
   /// 随机生成障碍物
   void addObstacle() {
+    Random random = game.random;
     int value = random.nextInt(100);
     PositionComponent obstacle;
     if (value < 20) {
@@ -88,7 +87,7 @@ class ObstacleComponent extends SpriteComponent
     );
 
     List<RectangleHitbox> boxes = createHitBoxesByType(type);
-    debugHitBoxes(boxes);
+    // debugHitBoxes(boxes);
     addAll(boxes);
   }
 
@@ -190,7 +189,7 @@ class AnimaObstacleComponent extends SpriteAnimationComponent
       ),
     );
     List<RectangleHitbox> boxes = createHitBoxes();
-    debugHitBoxes(boxes);
+    // debugHitBoxes(boxes);
     addAll(boxes);
   }
 

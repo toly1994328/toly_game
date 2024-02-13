@@ -42,7 +42,7 @@ class ObstacleComponent extends SpriteComponent
 
     this.position = pos;
     // 添加矩形碰撞区
-    addAll(createHitBoxes());
+    addAll(createHitBoxesByType(type));
     updateColor(false);
   }
 
@@ -61,7 +61,7 @@ class ObstacleComponent extends SpriteComponent
     updateColor(true);
   }
 
-  List<RectangleHitbox> createHitBoxes() {
+  List<RectangleHitbox> createHitBoxesByType(int type) {
     if (type == 0 || type == 1) {
       return [
         RectangleHitbox.relative(

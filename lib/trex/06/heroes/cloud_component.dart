@@ -5,12 +5,10 @@ import 'package:flame/components.dart';
 import '../trex_game.dart';
 
 class CloudManager extends PositionComponent with HasGameReference<TrexGame> {
-  final Random random = Random();
 
   @override
   void update(double dt) {
     super.update(dt);
-
     if (children.isNotEmpty) {
       final lastCloud = children.last as CloudComponent;
       // 当 lastPosX < 屏幕宽度的一半时，生成一个云朵。
@@ -27,8 +25,8 @@ class CloudManager extends PositionComponent with HasGameReference<TrexGame> {
 
   void addCloud() {
     CloudComponent cloud = CloudComponent();
-    double offsetX = 300 + (500 - 300) * random.nextDouble();
-    cloud.y = 30 + (70 - 30) * random.nextDouble();
+    double offsetX = 300 + (500 - 300) * game.random.nextDouble();
+    cloud.y = 30 + (70 - 30) * game.random.nextDouble();
     if (children.isEmpty) {
       cloud.x = offsetX;
     } else {

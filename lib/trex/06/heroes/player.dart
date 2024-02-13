@@ -88,13 +88,6 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     }
   }
 
-  void debugHitBoxes(List<RectangleHitbox> boxes) {
-    for (RectangleHitbox box in boxes) {
-      box.debugMode = true;
-      box.debugColor = Colors.orange;
-    }
-  }
-
   @override
   void update(double dt) {
     super.update(dt);
@@ -111,8 +104,12 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
 
   set state(PlayerState newState) {
     PlayerState? old = current;
+    if (newState == PlayerState.crashed) {
+      current = newState;
+      return;
+    }
     // 死亡或跳跃中不允许修改状态
-    if(old == PlayerState.crashed ||old == PlayerState.jumping) return;
+    if (old == PlayerState.crashed || old == PlayerState.jumping) return;
 
     // 蹲下
     if (old == PlayerState.running && newState == PlayerState.down) {
@@ -123,7 +120,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     // 起立
     if (old != PlayerState.running && newState == PlayerState.running) {
       current = PlayerState.running;
-      if(old==PlayerState.down){
+      if (old == PlayerState.down) {
         switchHitBoxByState(current, old);
       }
     }
@@ -133,6 +130,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
       current = PlayerState.jumping;
       vY = -770;
       sY = 0;
+      return;
     }
     current = newState;
   }
@@ -140,8 +138,6 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
   @override
   Future<void> onLoad() async {
     _initAnimations();
-    debugHitBoxes(_customHitBoxes);
-    debugHitBoxes(_downHitBoxes);
     switchHitBoxByState(current, null);
   }
 
