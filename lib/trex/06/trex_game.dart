@@ -1,12 +1,15 @@
 import 'dart:math';
 import 'dart:ui';
+import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' hide Image;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:toly_game/trex/06/ext/hit_box_show.dart';
 
+import 'heroes/fps_text.dart';
 import 'heroes/player.dart';
 import 'scene/game_over_scene.dart';
 import 'scene/running_scene.dart';
@@ -33,6 +36,7 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks, HasCollision
     spriteImage = await Flame.images.load('trex/trex.png');
     sp = await SharedPreferences.getInstance();
     add(waitingScene);
+    add(FpsText());
   }
 
   @override
@@ -52,6 +56,10 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks, HasCollision
       if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
         runningScene.state = PlayerState.running;
       }
+    }
+
+    if (keysPressed.contains(LogicalKeyboardKey.keyI)) {
+      toggleHitBoxTree();
     }
 
     if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
