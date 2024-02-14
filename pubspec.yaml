@@ -15,6 +15,7 @@ dependencies:
   flame: ^1.14.0
   shared_preferences: ^2.2.2
   cupertino_icons: ^1.0.2
+  flame_forge2d: ^0.16.0+5
   flame_ext:
     path: packages/flame_ext
 
