@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - season2
     tags:
       - '*'
   pull_request:
@@ -30,6 +30,7 @@ jobs:
         env:
           FILE_NAME: lib/common/config/ignoreConfig.dart
           FILE_DATA: class NetConfig { static const CLIENT_ID = "${{ secrets.CLIENT_ID }}"; static const CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}";}
+      - run: flutter --version
       - run: flutter pub get
       - run: flutter build apk --release --target-platform=android-arm64 --no-shrink
 
