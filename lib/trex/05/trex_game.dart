@@ -38,8 +38,8 @@ class TrexGame extends FlameGame
   }
 
   @override
-  KeyEventResult onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    if (event is RawKeyUpEvent) {
+  KeyEventResult onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    if (event is KeyUpEvent) {
       if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
         player.state = PlayerState.running;
       }

@@ -16,10 +16,10 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
 
   late final Image spriteImage;
   late final Player player = Player();
-   final ScoreComponent score = ScoreComponent();
-   final GroundComponent ground = GroundComponent();
-   final CloudManager cloudManager = CloudManager();
-   final ObstacleManager obstacleManager = ObstacleManager();
+  final ScoreComponent score = ScoreComponent();
+  final GroundComponent ground = GroundComponent();
+  final CloudManager cloudManager = CloudManager();
+  final ObstacleManager obstacleManager = ObstacleManager();
 
   @override
   Future<void> onLoad() async {
@@ -33,8 +33,6 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
     add(score);
   }
 
-
-
   @override
   Color backgroundColor() {
     return const Color(0xffffffff);
@@ -42,17 +40,17 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
 
   @override
   KeyEventResult onKeyEvent(
-    RawKeyEvent event,
+    KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-
     if (event is RawKeyUpEvent) {
-      if(event.logicalKey==LogicalKeyboardKey.arrowDown){
+      if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
         player.running();
       }
     }
     if (keysPressed.contains(LogicalKeyboardKey.keyI)) {
-      print("======obstacleManager:${obstacleManager.children.length}=====cloudManager:${cloudManager.children.length}========");
+      print(
+          "======obstacleManager:${obstacleManager.children.length}=====cloudManager:${cloudManager.children.length}========");
     }
     if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
       player.down();
@@ -65,8 +63,6 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
     }
     return KeyEventResult.handled;
   }
-
-
 
   @override
   void onTapDown(TapDownEvent event) {

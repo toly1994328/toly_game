@@ -44,7 +44,7 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks, HasCollision
 
   @override
   KeyEventResult onKeyEvent(
-      RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+      KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     /// 俺任意按键开启游戏
     if (state == GameState.waiting) {
       removeWhere((component) => component is WaitingScene);

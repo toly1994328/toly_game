@@ -9,7 +9,7 @@ extension HitBoxShow on Component {
     for (int i = 0; i < children.length; i++) {
       Component c = children.elementAt(i);
       if (c.children.isEmpty) {
-        if (c is RectangleHitbox) {
+        if (c is Hitbox) {
           c.debugMode = !c.debugMode;
           c.debugColor = color;
         }

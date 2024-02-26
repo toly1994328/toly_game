@@ -42,7 +42,7 @@ class TrexGame extends FlameGame with KeyboardEvents, TapCallbacks {
 
   @override
   KeyEventResult onKeyEvent(
-    RawKeyEvent event,
+      KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
     if (keysPressed.contains(LogicalKeyboardKey.keyA)) {

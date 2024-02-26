@@ -12,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flame: ^1.14.0
+  flame: ^1.16.0
   shared_preferences: ^2.2.2
   cupertino_icons: ^1.0.2
   flame_forge2d: ^0.16.0+5
@@ -37,6 +37,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/trex/
+    - assets/images/break_bricks/
 
 #flutter_gen:
 #  output: lib/base_course/23/gen # 代码生成的路径位置
