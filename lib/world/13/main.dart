@@ -1,77 +1,90 @@
+import 'dart:async';
+import 'dart:ui';
+
+import 'package:flame/camera.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
-import 'package:flame/extensions.dart';
-import 'package:flame/game.dart';
-import 'package:flame_forge2d/flame_forge2d.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flame/flame.dart';
 
-void main() {
-  runApp(const GameWidget.controlled(gameFactory: Forge2DExample.new));
+import 'package:flame/game.dart';
+import 'package:flame/palette.dart';
+import 'package:flutter/material.dart' hide Image;
+import 'package:flutter/services.dart';
+import 'package:toly_game/trex/06/heroes/fps_text.dart';
+
+main() {
+  runApp(GameWidget(game: MainGame()));
 }
 
-class Forge2DExample extends Forge2DGame {
+class MainGame extends FlameGame<PlayWord> with KeyboardEvents {
+  MainGame()
+      : super(
+          world: PlayWord(),
+          camera: CameraComponent.withFixedResolution(width: 320, height: 480),
+        );
+
+  late final Image spriteImage;
   @override
   Future<void> onLoad() async {
-    await super.onLoad();
-
-    camera.viewport.add(FpsTextComponent());
-    world.add(Ball());
-    world.addAll(createBoundaries());
+    spriteImage = await Flame.images.load('demos/c17_mini_rmbg.png');
+    add(FpsText(color: Colors.white));
   }
 
-  List<Component> createBoundaries() {
-    final visibleRect = camera.visibleWorldRect;
-    final topLeft = visibleRect.topLeft.toVector2();
-    final topRight = visibleRect.topRight.toVector2();
-    final bottomRight = visibleRect.bottomRight.toVector2();
-    final bottomLeft = visibleRect.bottomLeft.toVector2();
+  @override
+  KeyEventResult onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    super.onKeyEvent(event, keysPressed);
+    if (event is KeyDownEvent || event is KeyRepeatEvent) {
+      switch (event.logicalKey) {
+        case LogicalKeyboardKey.arrowDown:
+          camera.viewfinder.zoom-=0.1;
+        case LogicalKeyboardKey.arrowUp:
+          camera.viewfinder.zoom+=0.1;
+        case LogicalKeyboardKey.arrowLeft:
+          camera.moveBy(Vector2(10, 0));
+        case LogicalKeyboardKey.arrowRight:
+          camera.moveBy(Vector2(-10, 0));
+      }
+    }
 
-    return [
-      Wall(topLeft, topRight),
-      Wall(topRight, bottomRight),
-      Wall(bottomLeft, bottomRight),
-      Wall(topLeft, bottomLeft),
-    ];
+    return KeyEventResult.handled;
+  }
+
+  @override
+  Color backgroundColor() => const Color(0xff5EC8F8);
+}
+
+class PlayWord extends World {
+
+  @override
+  FutureOr<void> onLoad() {
+    add(Hero()..anchor=Anchor.center);
+    return super.onLoad();
+  }
+
+  @override
+  void render(Canvas canvas) {
+    super.render(canvas);
+    canvas.drawRect(const Rect.fromLTWH(-160, -240, 320, 480), Paint());
   }
 }
 
-class Ball extends BodyComponent with TapCallbacks {
-  Ball({Vector2? initialPosition})
-      : super(
-    fixtureDefs: [
-      FixtureDef(
-        CircleShape()..radius = 5,
-        restitution: 0.8,
-        friction: 0.4,
-      ),
-    ],
-    bodyDef: BodyDef(
-      angularDamping: 0.8,
-      position: initialPosition ?? Vector2.zero(),
-      type: BodyType.dynamic,
-    ),
-  );
-
+class Hero extends SpriteComponent with HasGameRef<MainGame> {
   @override
-  void onTapDown(_) {
-    body.applyLinearImpulse(Vector2.random() * 5000);
+  FutureOr<void> onLoad() {
+    sprite = Sprite(game.spriteImage);
+    debugMode = true;
+    debugColor = Colors.white;
+    return super.onLoad();
   }
 }
 
-class Wall extends BodyComponent {
-  final Vector2 _start;
-  final Vector2 _end;
-
-  Wall(this._start, this._end);
+class Playground extends RectangleComponent {
+  Playground() : super(paint: Paint()..color = const Color(0xff000000));
 
   @override
-  Body createBody() {
-    final shape = EdgeShape()..set(_start, _end);
-    final fixtureDef = FixtureDef(shape, friction: 0.3);
-    final bodyDef = BodyDef(
-      position: Vector2.zero(),
-    );
-
-    return world.createBody(bodyDef)..createFixture(fixtureDef);
+  FutureOr<void> onLoad() async {
+    super.onLoad();
+    size = Vector2(320, 480);
+    anchor = Anchor.center;
   }
 }

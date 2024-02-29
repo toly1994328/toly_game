@@ -36,6 +36,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/demos/
     - assets/images/trex/
     - assets/images/break_bricks/
 

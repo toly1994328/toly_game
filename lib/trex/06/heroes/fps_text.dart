@@ -3,6 +3,12 @@ import 'package:flame/text.dart';
 import 'package:flutter/material.dart';
 
 class FpsText extends PositionComponent {
+
+  final Color color;
+
+
+  FpsText({this.color=Colors.grey});
+
   @override
   void onGameResize(Vector2 size) {
     super.onGameResize(size);
@@ -11,7 +17,7 @@ class FpsText extends PositionComponent {
   }
 
   late TextComponent text = TextComponent(
-    textRenderer: TextPaint(style: const TextStyle(fontSize: 14, color: Colors.grey)),
+    textRenderer: TextPaint(style: TextStyle(fontSize: 14, color: color)),
   );
 
   @override
