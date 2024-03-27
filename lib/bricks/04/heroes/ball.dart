@@ -3,14 +3,15 @@ import 'dart:ui';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:toly_game/bricks/04/config/audio_manager/sound_effect.dart';
 import '../heroes/bricks.dart';
 
 import '../bricks_game.dart';
+import 'game_top_bar/brick_wall.dart';
 import 'playground.dart';
 import 'paddle.dart';
 
-class Ball extends SpriteComponent
-    with HasGameRef<BricksGame>, CollisionCallbacks {
+class Ball extends SpriteComponent with HasGameRef<BricksGame>, CollisionCallbacks {
 
   @override
   FutureOr<void> onLoad() {
@@ -29,25 +30,32 @@ class Ball extends SpriteComponent
   }
 
   void run() {
-    if (v.x == 0 && v.y == 0) {
-      v = Vector2(-250, -250);
-    }
+    v = Vector2(-350, -350);
   }
 
   @override
   void onCollisionStart(
       Set<Vector2> intersectionPoints, PositionComponent other) {
-    if (other is Paddle) {
+    if (other is Paddle||other is BrickWall) {
       _handleHitPaddle(intersectionPoints.first);
+      game.am.play(SoundEffect.ballBrick);
     } else if (other is Brick) {
       _lockCollisionTest(()=> _handleHitBrick(intersectionPoints.first, other));
     } else if (other is Playground) {
       _handleHitPlayground(intersectionPoints.first, other.size);
+      game.am.play(SoundEffect.bitWall);
+
     }
     super.onCollisionStart(intersectionPoints, other);
   }
 
   void _handleHitPlayground(Vector2 position, Vector2 areaSize) {
+    if(position.y >= areaSize.y-height){
+      game.world.died();
+      v = Vector2(0, 0);
+      return;
+    }
+
     // 四周拐角
     if (position.x < height && position.y < height ||
         position.x < height && position.y > areaSize.y - height ||
@@ -63,8 +71,6 @@ class Ball extends SpriteComponent
       v.x = -v.x; // 左壁
     } else if (position.x >= areaSize.x) {
       v.x = -v.x; // 右壁
-    } else if (position.y >= areaSize.y) {
-      v.y = -v.y; // 下壁
     }
   }
 
@@ -100,5 +106,6 @@ class Ball extends SpriteComponent
       v.x = -v.x;
     }
     brick.removeFromParent();
+    game.am.play(SoundEffect.uiSelect);
   }
 }

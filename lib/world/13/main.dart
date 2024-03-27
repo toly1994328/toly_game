@@ -1,13 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flame/camera.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/flame.dart';
 
 import 'package:flame/game.dart';
-import 'package:flame/palette.dart';
 import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/services.dart';
 import 'package:toly_game/trex/06/heroes/fps_text.dart';

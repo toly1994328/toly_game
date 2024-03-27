@@ -45,4 +45,10 @@ class Brick extends SpriteComponent with HasGameRef<BricksGame> {
     add(RectangleHitbox());
     return super.onLoad();
   }
+
+  @override
+  void onRemove() {
+    super.onRemove();
+    game.world.checkSuccess();
+  }
 }

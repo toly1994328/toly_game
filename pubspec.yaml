@@ -13,9 +13,12 @@ dependencies:
   flutter:
     sdk: flutter
   flame: ^1.16.0
+  flame_audio: ^2.10.0
   shared_preferences: ^2.2.2
   cupertino_icons: ^1.0.2
   flame_forge2d: ^0.16.0+5
+  window_manager: ^0.3.8      # 桌面管理
+
   flame_ext:
     path: packages/flame_ext
 
@@ -39,6 +42,14 @@ flutter:
     - assets/images/demos/
     - assets/images/trex/
     - assets/images/break_bricks/
+    - assets/audio/
+    - assets/audio/break_bricks/
+    - assets/audio/ui/
+    - assets/data/
+  fonts:
+    - family: 'JetBrainsMono'
+      fonts:
+        - asset: 'assets/fonts/JetBrainsMono-VariableFont_wght.ttf'
 
 #flutter_gen:
 #  output: lib/base_course/23/gen # 代码生成的路径位置
