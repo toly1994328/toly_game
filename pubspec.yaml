@@ -12,32 +12,34 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-#  flame: ^1.16.0
-  flame: ^1.18.0
-  flame_audio: ^2.10.2
-  shared_preferences: ^2.2.2
+
+  flutter_localizations:   # 国际化
+    sdk: flutter
+  flutter_bloc: 8.1.6
+  flame: ^1.26.0
+  flame_audio: ^2.11.1
+  shared_preferences: ^2.5.2
   cupertino_icons: ^1.0.2
-  flame_svg: ^1.10.1
-  flame_forge2d: ^0.16.0+5
-  flutter_svg: ^2.0.10+1
-  window_manager: ^0.3.8      # 桌面管理
+  flame_svg: ^1.11.7
+  flame_forge2d: ^0.14.0
+  flutter_svg: ^2.0.17
+  window_manager: ^0.4.3      # 桌面管理
 
-
-#  web: ^0.5.1
   flame_ext:
     path: packages/flame_ext
-  life_game:
-    path: modules/life_game
-  snake:
-    path: modules/snake
+#  life_game:
+#    path: modules/life_game
+#  snake:
+#    path: modules/snake
 
-  # 国际化
-  flutter_localizations:
-    sdk: flutter
+
   intl: ^0.19.0
   oktoast: ^3.4.0
-  tolyui: ^0.0.2+15
-  url_launcher: ^6.2.5 # url 跳转
+
+  tolyui: 0.0.4+8
+  fx_framework: 0.0.1
+
+  url_launcher: ^6.3.1 # url 跳转
 
 dev_dependencies:
   flutter_test:
@@ -45,12 +47,12 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
-dependency_overrides:
-  flame:
-    git:
-      url: https://github.com/toly1994328/flame.git
-      ref: 26a71c348f468d20fd5c61e168906b6bdac794d8
-      path: packages/flame
+#dependency_overrides:
+#  flame:
+#    git:
+#      url: https://github.com/toly1994328/flame.git
+#      ref: 26a71c348f468d20fd5c61e168906b6bdac794d8
+#      path: packages/flame
 #  tolyui:
 #    path: D:\Projects\Flutter\Fx\toly_ui\modules\tolyui
 
@@ -61,6 +63,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/demos/
+    - assets/images/cover/
     - assets/images/trex/
     - assets/images/break_bricks/
     - assets/images/sweeper/
@@ -72,9 +75,18 @@ flutter:
     - assets/audio/ui/
     - assets/data/
   fonts:
+    - family: TolyGameIcon
+      fonts:
+        - asset: assets/iconfont/toly_game_icon.ttf
     - family: 'JetBrainsMono'
       fonts:
         - asset: 'assets/fonts/JetBrainsMono-VariableFont_wght.ttf'
 
 #flutter_gen:
 #  output: lib/base_course/23/gen # 代码生成的路径位置
+
+toly:
+  icon:
+    assets_dir: 'assets/iconfont'
+    dist_file: 'lib/data/res/toly_game_icon.dart'
+    src_zip: 'assets/iconfont/hide/download.zip'

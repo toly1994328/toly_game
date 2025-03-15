@@ -1,0 +1,114 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fx_framework/fx_framework.dart';
+import 'package:toly_game/data/res/toly_game_icon.dart';
+import 'package:toly_game/navigation/view/desk_navigation/rail_bar/setting_button.dart';
+import 'package:tolyui/tolyui.dart';
+
+import '../../../router/app_route.dart';
+import 'logo.dart';
+
+class DeskNavigationRail extends StatefulWidget {
+  const DeskNavigationRail({super.key});
+
+  @override
+  State<DeskNavigationRail> createState() => _DeskNavigationRailState();
+}
+
+class _DeskNavigationRailState extends State<DeskNavigationRail> {
+  String activeId = '/playground';
+
+  List<MenuMeta> get navMenus => [
+        MenuMeta(
+          icon: TolyGameIcon.game_center,
+          label: "首页",
+          router: AppRoute.playground.url,
+        ),
+        MenuMeta(
+          icon: TolyGameIcon.save,
+          label: "存档",
+          router: AppRoute.save.url,
+        ),
+        MenuMeta(
+          icon: TolyGameIcon.collect,
+          label: "收藏",
+          router: AppRoute.collect.url,
+        ),
+        MenuMeta(
+          icon: TolyGameIcon.mine,
+          label: "我的",
+          router: AppRoute.mine.url,
+        ),
+      ];
+
+  Color get backgroundColor {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    return isDark ? Color(0xff191a1c) : Color(0xfff6f7f8);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final String activePath = GoRouterState.of(context).uri.toString();
+    final bool isSetting = activePath == AppRoute.settings.url;
+    return TolyRailMenuBar(
+      width: 68,
+      gap: 10,
+      maxWidth: 200,
+      padding: EdgeInsets.symmetric(horizontal: 6),
+      cellBuilder: (menu, display) => GameMenuCell(
+        menu: menu,
+        display: display,
+      ),
+      animationConfig: AnimationConfig(type: AnimTickType.hove),
+      leading: (type) => Padding(
+        padding: const EdgeInsets.only(bottom: 20.0, top: 16),
+        child: TolyGameLogo(),
+      ),
+      menus: navMenus,
+      activeId: activePath,
+      backgroundColor: Colors.transparent,
+      onSelected: context.go,
+      tail: (_) => SettingButton(active: isSetting),
+    );
+  }
+}
+
+class GameMenuCell extends StatelessWidget {
+  final MenuMeta menu;
+  final DisplayMeta display;
+
+  const GameMenuCell({
+    super.key,
+    required this.menu,
+    required this.display,
+  });
+
+  ColorTween get foregroundTween => ColorTween(
+      begin: const Color(0xFF4A4A6A), end: const Color(0xFF8D6EFF) // 强化品牌色,
+      );
+
+  ColorTween get textTween =>
+      ColorTween(begin: const Color(0xFF6A6A8A), end: const Color(0xaaedf2fa));
+
+  @override
+  Widget build(BuildContext context) {
+    Color? textColor = textTween.transform(display.rate);
+    Color? menuColor = foregroundTween.transform(display.rate);
+
+    TextStyle style = TextStyle(color: textColor, fontSize: 12);
+    return Container(
+      alignment: Alignment.center,
+      height: 64,
+      child: Wrap(
+        spacing: 6,
+        direction: Axis.vertical,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          Icon(menu.icon, color: menuColor, size: 24),
+          Text(menu.label, style: style),
+        ],
+      ),
+    );
+  }
+}
