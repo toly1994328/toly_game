@@ -62,17 +62,7 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/demos/
     - assets/images/cover/
-    - assets/images/trex/
-    - assets/images/break_bricks/
-    - assets/images/sweeper/
-    - assets/images/break_bricks/boom/
-    - assets/images/break_bricks/bottom/
-    - assets/images/break_bricks/died/
-    - assets/audio/
-    - assets/audio/break_bricks/
-    - assets/audio/ui/
     - assets/data/
   fonts:
     - family: TolyGameIcon

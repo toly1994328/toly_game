@@ -1,7 +1,7 @@
 
 import 'package:fx_framework/fx_framework.dart';
 
-import 'toly_game_box.dart';
+import '../data/data.dart';
 
 class TolyGameBoxRepo implements AppStartRepository<AppConfig>{
 
@@ -10,7 +10,6 @@ class TolyGameBoxRepo implements AppStartRepository<AppConfig>{
   @override
   Future<AppConfig> initApp() async {
     WindowSizeAdapter.setSize();
-
     return AppConfig();
   }
 

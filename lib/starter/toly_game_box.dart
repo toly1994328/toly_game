@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fx_framework/fx_framework.dart';
 
-
+import '../data/data.dart';
 import '../navigation/router/app_route.dart';
 import 'view/entry.dart';
 import 'toly_game_box_repo.dart';
 
-class TolyGameBoxApp with FxStarter<AppConfig>{
-
+class TolyGameBoxApp with FxStarter<AppConfig> {
   const TolyGameBoxApp();
 
   @override
@@ -15,7 +14,7 @@ class TolyGameBoxApp with FxStarter<AppConfig>{
 
   @override
   void onGlobalError(Object error, StackTrace stack) {
-
+    print("${error}: stack:$stack");
   }
 
   @override
@@ -24,21 +23,13 @@ class TolyGameBoxApp with FxStarter<AppConfig>{
   }
 
   @override
-  void onStartError(BuildContext context, Object error, StackTrace trace) {
-
-  }
+  void onStartError(BuildContext context, Object error, StackTrace trace) {}
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    context.go(AppRoute.playground.url);
+    context.go(AppRoute.gameCenter.url);
   }
 
   @override
   AppStartRepository<AppConfig> get repository => const TolyGameBoxRepo();
-
-}
-
-
-class AppConfig{
-
 }

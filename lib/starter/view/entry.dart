@@ -33,6 +33,13 @@ class _TolyGameBoxState extends State<TolyGameBox> {
         themeMode: ThemeMode.dark,
         theme: ThemeData(
           brightness: Brightness.dark,
+            pageTransitionsTheme: const PageTransitionsTheme(builders: {
+              TargetPlatform.android: SlidePageTransitionsBuilder(),
+              TargetPlatform.iOS: SlidePageTransitionsBuilder(),
+              TargetPlatform.macOS: FadePageTransitionsBuilder(),
+              TargetPlatform.windows: FadePageTransitionsBuilder(),
+              TargetPlatform.linux: FadePageTransitionsBuilder(),
+            }),
           dividerTheme: DividerThemeData(
             color: Color(0xFF2A2A4D),
             thickness: 1,
