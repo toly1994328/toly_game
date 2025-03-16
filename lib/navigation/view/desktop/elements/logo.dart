@@ -6,13 +6,16 @@ class TolyGameLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: const Color(0x3340c4ff),
-      child:  Hero(
-        tag: "splash-logo",
-        child:  SvgPicture.asset(
-          'assets/images/logo.svg',
-          width: 24,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20.0, top: 16),
+      child: CircleAvatar(
+        backgroundColor: const Color(0x3340c4ff),
+        child:  Hero(
+          tag: "splash-logo",
+          child:  SvgPicture.asset(
+            'assets/images/logo.svg',
+            width: 24,
+          ),
         ),
       ),
     );

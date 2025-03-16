@@ -24,9 +24,17 @@ dependencies:
   flame_forge2d: ^0.14.0
   flutter_svg: ^2.0.17
   window_manager: ^0.4.3      # 桌面管理
+  sweeper:
+    path: modules/sweeper
+  trex:
+    path: modules/trex
+  bricks:
+    path: modules/bricks
+  snake:
+    path: modules/snake
+  life_game:
+    path: modules/life_game
 
-  flame_ext:
-    path: packages/flame_ext
 #  life_game:
 #    path: modules/life_game
 #  snake:
@@ -47,6 +55,9 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
 
+dependency_overrides:
+  flame:
+    path: packages/flame-1.26.0
 #dependency_overrides:
 #  flame:
 #    git:

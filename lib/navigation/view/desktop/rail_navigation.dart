@@ -6,24 +6,17 @@ import 'package:toly_game/data/res/toly_game_icon.dart';
 import 'package:tolyui/tolyui.dart';
 
 import '../../router/app_route.dart';
-import 'logo.dart';
-import 'setting_button.dart';
+import 'elements/logo.dart';
+import 'elements/setting_button.dart';
 
-class DeskNavigationRail extends StatefulWidget {
+class DeskNavigationRail extends StatelessWidget {
   const DeskNavigationRail({super.key});
-
-  @override
-  State<DeskNavigationRail> createState() => _DeskNavigationRailState();
-}
-
-class _DeskNavigationRailState extends State<DeskNavigationRail> {
-  String activeId = '/playground';
 
   List<MenuMeta> get navMenus => [
         MenuMeta(
           icon: TolyGameIcon.game_center,
           label: "首页",
-          router: AppRoute.gameCenter.url,
+          router: AppRoute.gameCenter.url
         ),
         MenuMeta(
           icon: TolyGameIcon.save,
@@ -42,11 +35,6 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
         ),
       ];
 
-  Color get backgroundColor {
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
-    return isDark ? Color(0xff191a1c) : Color(0xfff6f7f8);
-  }
-
   @override
   Widget build(BuildContext context) {
     final String activePath = GoRouterState.of(context).uri.toString();
@@ -55,17 +43,10 @@ class _DeskNavigationRailState extends State<DeskNavigationRail> {
       child: TolyRailMenuBar(
         width: 68,
         gap: 10,
-        maxWidth: 200,
-        padding: EdgeInsets.symmetric(horizontal: 6),
-        cellBuilder: (menu, display) => GameMenuCell(
-          menu: menu,
-          display: display,
-        ),
-        animationConfig: AnimationConfig(type: AnimTickType.hove),
-        leading: (type) => Padding(
-          padding: const EdgeInsets.only(bottom: 20.0, top: 16),
-          child: TolyGameLogo(),
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 6),
+        cellBuilder: GameMenuCell.create,
+        animationConfig: const AnimationConfig(type: AnimTickType.hove),
+        leading: (type) => const TolyGameLogo(),
         menus: navMenus,
         activeId: activePath,
         backgroundColor: Colors.transparent,
@@ -85,6 +66,8 @@ class GameMenuCell extends StatelessWidget {
     required this.menu,
     required this.display,
   });
+
+  const GameMenuCell.create(this.menu, this.display, {super.key});
 
   ColorTween get foregroundTween => ColorTween(
       begin: const Color(0xFF4A4A6A), end: const Color(0xFF8D6EFF) // 强化品牌色,

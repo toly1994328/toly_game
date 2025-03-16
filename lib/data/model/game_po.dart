@@ -1,14 +1,18 @@
 class GamePo {
-  String title;
-  String id;
-  String image;
-  String createAt;
+  final String title;
+  final String id;
+  final String image;
+  final String? github;
+  final String? article;
+  final String createAt;
 
-  GamePo({
+  GamePo( {
     required this.title,
     required this.id,
     required this.image,
     required this.createAt,
+     this.github,
+     this.article,
   });
 
   factory GamePo.fromMap(dynamic map) {
@@ -17,6 +21,8 @@ class GamePo {
       id: map['id'] ?? '',
       image: map['image'] ?? '',
       createAt: map['create_at'] ?? '',
+      article: map['article'],
+      github: map['github'],
     );
   }
 
@@ -25,7 +31,9 @@ class GamePo {
       'title': title,
       'id': id,
       'image': image,
+      'article': article,
+      'github': github,
       'create_at': createAt,
     };
   }
-}// TODO Implement this library.
+}

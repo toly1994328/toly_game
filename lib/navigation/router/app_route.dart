@@ -13,7 +13,7 @@ RouteBase get appRoute {
         path: AppRoute.splash.path,
         builder: (_, __) => const AppStartListener<AppConfig>(child: Splash()),
       ),
-      deskHomeRoute,
+      if (kAppEnv.isDesktopUI) deskHomeRoute,
     ],
   );
 }
@@ -24,6 +24,7 @@ enum AppRoute {
   startError('start_error', url: '/start_error'),
   globalError('404', url: '/404'),
   gameCenter('game_center', url: '/game_center'),
+  sweeper('sweeper', url: '/sweeper'),
   save('save', url: '/save'),
   collect('collect', url: '/collect'),
   mine('mine', url: '/mine'),
@@ -33,8 +34,5 @@ enum AppRoute {
   final String path;
   final String url;
 
-  const AppRoute(
-    this.path, {
-    required this.url,
-  });
+  const AppRoute(this.path, {required this.url});
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fx_framework/fx_framework.dart';
 import 'package:tolyui/basic/button/toly_action.dart';
 
-import '../../router/app_route.dart';
+import '../../../router/app_route.dart';
 
 
 class SettingButton extends StatelessWidget {

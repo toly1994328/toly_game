@@ -1,0 +1,186 @@
+[
+  {
+    "title": "粉红幸运",
+    "desc": "关卡道具出现概率 +5%",
+    "type": 0,
+    "src": "Paddle_C_Red_96x28.png",
+    "coin": 250,
+    "crystal": 20
+  },
+  {
+    "title": "蓝色雷霆",
+    "desc": "每击碎第10个砖块，击碎当前列所有砖块",
+    "type": 0,
+    "src": "Paddle_C_Blue_96x28.png",
+    "coin": 300,
+    "crystal": 20
+  },
+  {
+    "title": "紫色秘宝",
+    "desc": "每击碎10个方块，获得随机道具",
+    "type": 0,
+    "src": "Paddle_B_Purple_96x28.png",
+    "coin": 500,
+    "crystal": 20
+  },
+  {
+    "title": "黄色宝盆",
+    "desc": "砖块击碎时，获取金币概率 +10%",
+    "type": 0,
+    "src": "Paddle_B_Yellow_96x28.png",
+    "coin": 200,
+    "crystal": 20
+  },
+  {
+    "title": "红色嗜血",
+    "desc": "每击碎第10个砖块，击碎当前行所有砖块",
+    "type": 0,
+    "src": "Paddle_A_Red_96x28.png",
+    "coin": 600,
+    "crystal": 20
+  },
+  {
+    "title": "天蓝双星",
+    "desc": "每次发射两颗球。",
+    "type": 0,
+    "src": "Paddle_A_Blue_96x28.png",
+    "coin": 200,
+    "crystal": 20
+  },
+  {
+    "title": "碎石符文·纯蓝",
+    "desc": "击碎关卡中所有[纯蓝]砖块。",
+    "type": 1,
+    "src": "Colored_Blue-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文·纯绿",
+    "desc": "击碎关卡中所有[纯绿]砖块。",
+    "type": 1,
+    "src": "Colored_Green-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文·纯黄",
+    "desc": "击碎关卡中所有[纯黄]砖块。",
+    "type": 1,
+    "src": "Colored_Yellow-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文·纯紫",
+    "desc": "击碎关卡中所有[纯紫]砖块。",
+    "type": 1,
+    "src": "Colored_Purple-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文·纯橙",
+    "desc": "击碎关卡中所有[纯橙]砖块。",
+    "type": 1,
+    "src": "Colored_Orange-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Colored_Blue_Block-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Colored_Green_Block-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Colored_Yellow_Block-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Colored_Purple_Block-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Colored_Orange_Block-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Textured_Brick_04-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Textured_Brick_03-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Textured_Brick_02-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Textured_Stone_02-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "碎石符文",
+    "desc": "击碎关卡中所有对应的砖块。",
+    "type": 1,
+    "src": "Textured_Stone_03-64x32.png",
+    "coin": 20,
+    "crystal": null
+  },
+  {
+    "title": "透视道具",
+    "desc": "查看关卡内道具(6s)。",
+    "type": 2,
+    "src": "prop_show_5s.png",
+    "coin": 10,
+    "crystal": null
+  },
+  {
+    "title": "道具盒",
+    "desc": "随机掉落一个道具。",
+    "type": 2,
+    "src": "prop_random.png",
+    "coin": 10,
+    "crystal": null
+  }
+]

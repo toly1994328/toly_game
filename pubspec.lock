@@ -89,6 +89,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  bricks:
+    dependency: "direct main"
+    description:
+      path: "modules/bricks"
+      relative: true
+    source: path
+    version: "0.0.1"
   characters:
     dependency: transitive
     description:
@@ -153,6 +160,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -188,10 +203,9 @@ packages:
   flame:
     dependency: "direct main"
     description:
-      name: flame
-      sha256: "03e90d4bd3bc4f6a325602914ee27509f02d8743bb7ccb9282c88192b58eeb84"
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/flame-1.26.0"
+      relative: true
+    source: path
     version: "1.26.0"
   flame_audio:
     dependency: "direct main"
@@ -202,7 +216,7 @@ packages:
     source: hosted
     version: "2.11.1"
   flame_ext:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "packages/flame_ext"
       relative: true
@@ -412,6 +426,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  life_game:
+    dependency: "direct main"
+    description:
+      path: "modules/life_game"
+      relative: true
+    source: path
+    version: "0.0.1"
   lints:
     dependency: transitive
     description:
@@ -697,6 +718,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  snake:
+    dependency: "direct main"
+    description:
+      path: "modules/snake"
+      relative: true
+    source: path
+    version: "0.0.1"
   source_span:
     dependency: transitive
     description:
@@ -809,6 +837,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.1"
+  sweeper:
+    dependency: "direct main"
+    description:
+      path: "modules/sweeper"
+      relative: true
+    source: path
+    version: "0.0.1"
   synchronized:
     dependency: transitive
     description:
@@ -881,6 +916,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  trex:
+    dependency: "direct main"
+    description:
+      path: "modules/trex"
+      relative: true
+    source: path
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:

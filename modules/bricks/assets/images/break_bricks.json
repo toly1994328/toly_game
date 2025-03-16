@@ -1,0 +1,2099 @@
+{
+	"textures": [
+		{
+			"image": "break_bricks.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1022,
+				"h": 256
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Paddle_A_Blue_192x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 28
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 192,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_A_Red_192x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 28
+					},
+					"frame": {
+						"x": 1,
+						"y": 31,
+						"w": 192,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Purple_192x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 28
+					},
+					"frame": {
+						"x": 195,
+						"y": 1,
+						"w": 192,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Yellow_192x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 28
+					},
+					"frame": {
+						"x": 1,
+						"y": 61,
+						"w": 192,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Blue_192x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 28
+					},
+					"frame": {
+						"x": 195,
+						"y": 31,
+						"w": 192,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Red_192x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 192,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 192,
+						"h": 28
+					},
+					"frame": {
+						"x": 389,
+						"y": 1,
+						"w": 192,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_A_Blue_160x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 160,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 160,
+						"h": 28
+					},
+					"frame": {
+						"x": 1,
+						"y": 91,
+						"w": 160,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_A_Red_160x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 160,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 160,
+						"h": 28
+					},
+					"frame": {
+						"x": 195,
+						"y": 61,
+						"w": 160,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Purple_160x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 160,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 160,
+						"h": 28
+					},
+					"frame": {
+						"x": 389,
+						"y": 31,
+						"w": 160,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Yellow_160x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 160,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 160,
+						"h": 28
+					},
+					"frame": {
+						"x": 583,
+						"y": 1,
+						"w": 160,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Blue_160x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 160,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 160,
+						"h": 28
+					},
+					"frame": {
+						"x": 1,
+						"y": 121,
+						"w": 160,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Red_160x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 160,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 160,
+						"h": 28
+					},
+					"frame": {
+						"x": 163,
+						"y": 91,
+						"w": 160,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Bump Large.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 1,
+						"y": 151,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Blue-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 1,
+						"y": 185,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Green-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 1,
+						"y": 219,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Orange-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 357,
+						"y": 61,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Purple-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 551,
+						"y": 31,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Red-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 745,
+						"y": 1,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Yellow-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 875,
+						"y": 1,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_A_Blue_128x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 28
+					},
+					"frame": {
+						"x": 163,
+						"y": 121,
+						"w": 128,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Textured_Brick_01-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 131,
+						"y": 151,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Brick_02-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 131,
+						"y": 185,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Brick_03-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 131,
+						"y": 219,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_A_Red_128x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 28
+					},
+					"frame": {
+						"x": 325,
+						"y": 95,
+						"w": 128,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Purple_128x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 28
+					},
+					"frame": {
+						"x": 293,
+						"y": 125,
+						"w": 128,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Textured_Brick_04-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 261,
+						"y": 155,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_01-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 261,
+						"y": 189,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_02-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 261,
+						"y": 223,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_B_Yellow_128x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 28
+					},
+					"frame": {
+						"x": 487,
+						"y": 65,
+						"w": 128,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Blue_128x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 28
+					},
+					"frame": {
+						"x": 455,
+						"y": 95,
+						"w": 128,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Red_128x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 28
+					},
+					"frame": {
+						"x": 423,
+						"y": 125,
+						"w": 128,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Textured_Stone_03-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 391,
+						"y": 155,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_04-128x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 32
+					},
+					"frame": {
+						"x": 391,
+						"y": 189,
+						"w": 128,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Bump Small.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 391,
+						"y": 223,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Blue-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 457,
+						"y": 223,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Blue_Block-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 617,
+						"y": 65,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_A_Blue_96x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 28
+					},
+					"frame": {
+						"x": 585,
+						"y": 99,
+						"w": 96,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_A_Red_96x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 28
+					},
+					"frame": {
+						"x": 553,
+						"y": 129,
+						"w": 96,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Purple_96x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 28
+					},
+					"frame": {
+						"x": 521,
+						"y": 159,
+						"w": 96,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_B_Yellow_96x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 28
+					},
+					"frame": {
+						"x": 521,
+						"y": 189,
+						"w": 96,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Blue_96x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 28
+					},
+					"frame": {
+						"x": 523,
+						"y": 219,
+						"w": 96,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Ball_Blue_Glass-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 681,
+						"y": 31,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_C_Red_96x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 28
+					},
+					"frame": {
+						"x": 715,
+						"y": 35,
+						"w": 96,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Colored_Green-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 683,
+						"y": 65,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Green_Block-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 749,
+						"y": 65,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_A_Blue_64x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 28
+					},
+					"frame": {
+						"x": 813,
+						"y": 35,
+						"w": 64,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Colored_Orange-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 815,
+						"y": 65,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_A_Red_64x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 28
+					},
+					"frame": {
+						"x": 879,
+						"y": 35,
+						"w": 64,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Colored_Orange_Block-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 881,
+						"y": 65,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Purple-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 683,
+						"y": 99,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Purple_Block-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 749,
+						"y": 99,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Red-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 815,
+						"y": 99,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Red_Block-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 881,
+						"y": 99,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Paddle_B_Purple_64x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 28
+					},
+					"frame": {
+						"x": 945,
+						"y": 35,
+						"w": 64,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Colored_Yellow-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 947,
+						"y": 65,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Colored_Yellow_Block-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 947,
+						"y": 99,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Blue_Shiny-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 619,
+						"y": 159,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Blue_Glass-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 1005,
+						"y": 1,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Blue_Glass-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 619,
+						"y": 193,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Chrome_Glass-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 621,
+						"y": 219,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Blue_Shiny-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 651,
+						"y": 129,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Paddle_B_Yellow_64x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 28
+					},
+					"frame": {
+						"x": 677,
+						"y": 133,
+						"w": 64,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Blue_64x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 28
+					},
+					"frame": {
+						"x": 743,
+						"y": 133,
+						"w": 64,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Paddle_C_Red_64x28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 28
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 28
+					},
+					"frame": {
+						"x": 809,
+						"y": 133,
+						"w": 64,
+						"h": 28
+					}
+				},
+				{
+					"filename": "Textured_Brick_01-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 875,
+						"y": 133,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Brick_02-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 941,
+						"y": 133,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Brick_03-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 653,
+						"y": 163,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Brick_04-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 719,
+						"y": 163,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_01-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 785,
+						"y": 163,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_02-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 655,
+						"y": 197,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_03-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 721,
+						"y": 197,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Textured_Stone_04-64x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 32
+					},
+					"frame": {
+						"x": 787,
+						"y": 197,
+						"w": 64,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Chrome_Glass-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 655,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Green_Glossy-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 681,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Green_Shiny-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 707,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Orange_Glossy-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 733,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Orange_Shiny-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 759,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Red_Glossy-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 785,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Red_Shiny-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 811,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Yellow_Glossy-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 837,
+						"y": 231,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Blue_Shiny-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 851,
+						"y": 163,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Green_Glossy-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 869,
+						"y": 167,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Green_Shiny-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 903,
+						"y": 167,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Orange_Glossy-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 937,
+						"y": 167,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Orange_Shiny-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 971,
+						"y": 167,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Chrome_Glass-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 1005,
+						"y": 167,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Green_Glossy-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 1005,
+						"y": 185,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Yellow_Shiny-24x24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 24,
+						"h": 24
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 24,
+						"h": 24
+					},
+					"frame": {
+						"x": 853,
+						"y": 201,
+						"w": 24,
+						"h": 24
+					}
+				},
+				{
+					"filename": "Ball_Red_Glossy-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 879,
+						"y": 201,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Red_Shiny-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 913,
+						"y": 201,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Yellow_Glossy-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 947,
+						"y": 201,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Yellow_Shiny-32x32.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 981,
+						"y": 203,
+						"w": 32,
+						"h": 32
+					}
+				},
+				{
+					"filename": "Ball_Green_Shiny-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 863,
+						"y": 235,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Orange_Glossy-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 881,
+						"y": 235,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Orange_Shiny-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 899,
+						"y": 235,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Red_Glossy-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 917,
+						"y": 235,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Red_Shiny-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 935,
+						"y": 235,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Yellow_Glossy-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 953,
+						"y": 235,
+						"w": 16,
+						"h": 16
+					}
+				},
+				{
+					"filename": "Ball_Yellow_Shiny-16x16.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 16,
+						"h": 16
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 16
+					},
+					"frame": {
+						"x": 971,
+						"y": 237,
+						"w": 16,
+						"h": 16
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:94e6ada98cd23383fb7fba31b8452052:4547516228f6f1adf994a22c5d8ad8c0:dd4f558a25bc3411d0f9e3bc3dfc39d8$"
+	}
+}

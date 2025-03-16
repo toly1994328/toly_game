@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flame/cache.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flame_svg/flame_svg.dart';
@@ -12,41 +13,46 @@ import 'exception/assets.dart';
 typedef LoadProgressCallBack = void Function(int total, int cur);
 
 class TextureLoader {
-  final List<Frame> _frames = [];
-  late final Image _sprites;
+  final String? package;
+  AssetsCache? cache;
+  Images imageCache = Flame.images;
 
-  final Map<String, Sprite> _staticSpriteMap = {};
-  final Map<String, Svg> _svgMap = {};
-
-  Future<void> _initStaticSprites(List<String> extra) async {
-    List<String> images = extra;
-    for (int i = 0; i < images.length; i++) {
-      String filename = path.basename(images[i]);
-      _staticSpriteMap[filename] = await Sprite.load(images[i]);
+  TextureLoader({this.package}) {
+    if (package != null) {
+      cache = AssetsCache(prefix: 'packages/$package/assets/');
+      imageCache = Images(prefix: 'packages/$package/assets/');
     }
   }
 
-  Future<void> loadImages(List<String> images ,{
+  final List<Frame> _frames = [];
+  late final Image _sprites;
+
+  final Map<String, Sprite> _spriteMap = {};
+  final Map<String, Svg> _svgMap = {};
+
+  Future<void> loadImages(
+    List<String> images, {
     LoadProgressCallBack? loadingCallBack,
-  }) async{
+  }) async {
     int total = images.length;
     int cur = 0;
     for (int i = 0; i < images.length; i++) {
       String filename = path.basename(images[i]);
-      _staticSpriteMap[filename] = await Sprite.load(images[i]);
+      _spriteMap[filename] = await Sprite.load(images[i],images: imageCache);
       cur++;
       loadingCallBack?.call(total, cur);
     }
   }
 
-  Future<void> loadSvg(List<String> images ,{
+  Future<void> loadSvg(
+    List<String> images, {
     LoadProgressCallBack? loadingCallBack,
-  }) async{
+  }) async {
     int total = images.length;
     int cur = 0;
     for (int i = 0; i < images.length; i++) {
       String filename = path.basename(images[i]);
-      _svgMap[filename] = await Svg.load(images[i]);
+      _svgMap[filename] = await Svg.load(images[i], cache: cache);
       cur++;
       loadingCallBack?.call(total, cur);
     }
@@ -63,7 +69,7 @@ class TextureLoader {
     List<String> images = extra;
     for (int i = 0; i < images.length; i++) {
       String filename = path.basename(images[i]);
-      _staticSpriteMap[filename] = await Sprite.load(images[i]);
+      _spriteMap[filename] = await Sprite.load(images[i],images: imageCache);
       cur++;
       loadingCallBack?.call(total, cur);
     }
@@ -77,14 +83,14 @@ class TextureLoader {
       dynamic texture = textures[i];
       _frames.addAll((texture['frames'] as List).map(Frame.fromMap));
     }
-    _sprites = await Flame.images.load(imageAsset);
+    _sprites = await imageCache.load(imageAsset);
     cur++;
     loadingCallBack?.call(total, cur);
   }
 
   Sprite operator [](String name) {
-    if (_staticSpriteMap.containsKey(name)) {
-      return _staticSpriteMap[name]!;
+    if (_spriteMap.containsKey(name)) {
+      return _spriteMap[name]!;
     }
 
     Frame frame = _frames.singleWhere((e) => e.name == name);
@@ -95,14 +101,12 @@ class TextureLoader {
     );
   }
 
-
   Svg findSvg(String name) {
     if (_svgMap.containsKey(name)) {
       return _svgMap[name]!;
     }
     throw AssetsNotFindException(name);
   }
-
 }
 
 class Frame {

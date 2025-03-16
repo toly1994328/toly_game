@@ -5,12 +5,14 @@ class CustomDeskTopBar extends StatelessWidget {
   final double height;
   final String title;
   final Widget? center;
+  final Widget? leading;
 
   const CustomDeskTopBar({
     super.key,
     this.height = 56,
     required this.title,
     this.center,
+    this.leading,
   });
 
   @override
@@ -27,6 +29,10 @@ class CustomDeskTopBar extends StatelessWidget {
       child: Row(
         children: [
           const SizedBox(width: 16),
+          if(leading!=null) Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: leading!,
+          ),
           Text(title, style: titleStyle),
           child,
           if (kAppEnv.isWindows) const WindowButtons()
