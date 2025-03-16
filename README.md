@@ -1,4 +1,7 @@
 
+![game_center.webp](docs%2Fscreen%2Fgame_center.webp)
+
+
 > 注：本文会随着教程博客的发布而 **持续更新**。  
 > 系列文章发布于掘金社区，可能会更新、修正，一切以 [掘金文章]() 版本为准。  
 
