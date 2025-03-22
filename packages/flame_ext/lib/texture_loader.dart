@@ -25,7 +25,7 @@ class TextureLoader {
   }
 
   final List<Frame> _frames = [];
-  late final Image _sprites;
+  late Image _sprites;
 
   final Map<String, Sprite> _spriteMap = {};
   final Map<String, Svg> _svgMap = {};

@@ -6,8 +6,32 @@ import 'package:sweeper/app/sweeper_app.dart';
 import 'package:toly_game/components/project/custom_desk_top_bar.dart';
 import 'package:trex/main.dart';
 
-class BricksPage extends StatelessWidget {
+class BricksPage extends StatefulWidget {
   const BricksPage({super.key});
+
+  @override
+  State<BricksPage> createState() => _BricksPageState();
+}
+
+class _BricksPageState extends State<BricksPage> {
+
+  @override
+  void initState() {
+  print("=========BricksPage#initState===========");
+    super.initState();
+  }
+
+  @override
+  void didUpdateWidget(covariant BricksPage oldWidget) {
+    print("=========BricksPage#didUpdateWidget===========");
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void dispose() {
+    print("=========BricksPage#dispose===========");
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +39,9 @@ class BricksPage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body:  Column(
         children: [
-          CustomDeskTopBar(title: '经典打砖块',leading: BackButton(
-            onPressed: context.pop,
-          ),),
+          // CustomDeskTopBar(title: '经典打砖块',leading: BackButton(
+          //   onPressed: context.pop,
+          // ),),
           const Expanded(child: BreakGamePanel()),
         ],
       ),

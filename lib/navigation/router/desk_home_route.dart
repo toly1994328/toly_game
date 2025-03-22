@@ -15,13 +15,41 @@ import '../../pages/settings/settings_page.dart';
 import '../view/desktop/desk_navigation.dart';
 import 'app_route.dart';
 
+RouteBase get gameRoute => GoRoute(
+  path: 'game/:name',
+  pageBuilder: (_, GoRouterState state) {
+    String? gameName = state.pathParameters['name'];
+    Widget child = gameWidgetMap[gameName] ?? const GameCenter();
+    return NoTransitionPage(child: child);
+  },
+);
+
+Map<String, Widget> get gameWidgetMap => {
+      "sweeper": const SweeperPage(),
+      "trex": const TrexPage(),
+      "breaks": const BricksPage(),
+      "snake": const SnakePage(),
+      "life_game": const LifeGamePage(),
+    };
+
 RouteBase get deskHomeRoute => ShellRoute(
       builder: (_, __, Widget child) => DeskNavigation(content: child),
       routes: [
-        GoRoute(
-          path: AppRoute.gameCenter.path,
-          pageBuilder: (_, __) => const NoTransitionPage(child: GameCenterPage()),
+        ShellRoute(
+          routes: [gameRoute],
+          builder: (_, __, Widget child) => GameCenterNavigation(child: child),
         ),
+        // StatefulShellRoute.indexedStack(
+        //     builder: (_, __, Widget child) => GameCenterNavigation(child: child),
+        //     branches: [
+        //       GoRoute(
+        //         path: 'gameCenter',
+        //         pageBuilder: (_, GoRouterState state) {
+        //           return NoTransitionPage(child: GameCenter());
+        //         },
+        //       ),
+        //       // gameRoute,
+        //     ].map((e) => StatefulShellBranch(routes: [e])).toList()),
         GoRoute(
           path: AppRoute.save.path,
           pageBuilder: (_, __) => const NoTransitionPage(child: SavePage()),
@@ -37,26 +65,6 @@ RouteBase get deskHomeRoute => ShellRoute(
         GoRoute(
           path: AppRoute.settings.path,
           pageBuilder: (_, __) => const NoTransitionPage(child: SettingsPage()),
-        ),
-        GoRoute(
-          path: AppRoute.sweeper.path,
-          pageBuilder: (ctx, __) => const NoTransitionPage(child: SweeperPage()),
-        ),
-        GoRoute(
-          path: '/trex',
-          pageBuilder: (ctx, __) => const NoTransitionPage(child: TrexPage()),
-        ),
-        GoRoute(
-          path: '/breaks',
-          pageBuilder: (ctx, __) => const NoTransitionPage(child: BricksPage()),
-        ),
-        GoRoute(
-          path: '/snake',
-          pageBuilder: (ctx, __) => const NoTransitionPage(child: SnakePage()),
-        ),
-        GoRoute(
-          path: '/life_game',
-          pageBuilder: (ctx, __) => const NoTransitionPage(child: LifeGamePage()),
         ),
       ],
     );

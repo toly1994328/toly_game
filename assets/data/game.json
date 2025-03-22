@@ -3,6 +3,7 @@
     "title": "经典扫雷",
     "id": "sweeper",
     "image": "assets/images/cover/sweeper.webp",
+    "logo": "assets/images/logo/sweeper.svg",
     "github": "https://github.com/toly1994328/toly_game/tree/game_box/modules/sweeper",
     "article": "https://juejin.cn/post/7362203195051212863",
     "create_at": "2024-05-07"
@@ -11,6 +12,7 @@
     "title": "恐龙快跑",
     "id": "trex",
     "image": "assets/images/cover/trex.webp",
+    "logo": "assets/images/logo/trex.svg",
     "github": "https://github.com/toly1994328/toly_game/tree/game_box/modules/trex",
     "article": "https://juejin.cn/post/7341668771911876635",
     "create_at": "2024-03-04"
@@ -19,6 +21,7 @@
     "title": "经典打砖块",
     "id": "breaks",
     "image": "assets/images/cover/brick.webp",
+    "logo": "assets/images/logo/breaks.svg",
     "github": "https://github.com/toly1994328/toly_game/tree/game_box/modules/breaks",
     "article": "https://juejin.cn/post/7346113400647270439",
     "create_at": "2024-03-15"
@@ -28,6 +31,7 @@
     "id": "life_game",
     "image": "assets/images/cover/life_game.webp",
     "github": "https://github.com/toly1994328/toly_game/tree/game_box/modules/life_game",
+    "logo": "assets/images/logo/life_game.svg",
     "article": "https://juejin.cn/post/7388338139633565747",
     "create_at": "2024-03-15"
   },
@@ -36,6 +40,7 @@
     "id": "snake",
     "image": "assets/images/cover/snake.webp",
     "github": "https://github.com/toly1994328/toly_game/tree/game_box/modules/snake",
+    "logo": "assets/images/logo/snake.svg",
     "article": "https://juejin.cn/post/7402781955078176818",
     "create_at": "2024-08-19"
   }

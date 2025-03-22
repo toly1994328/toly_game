@@ -45,6 +45,7 @@ dependencies:
   oktoast: ^3.4.0
 
   tolyui: 0.0.4+8
+  tolyui_meta: 0.0.1
   fx_framework: 0.0.1
 
   url_launcher: ^6.3.1 # url 跳转
@@ -74,6 +75,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/cover/
+    - assets/images/logo/
     - assets/data/
   fonts:
     - family: TolyGameIcon

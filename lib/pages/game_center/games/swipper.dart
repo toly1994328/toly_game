@@ -13,9 +13,9 @@ class SweeperPage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body:  Column(
         children: [
-          CustomDeskTopBar(title: '经典扫雷',leading: BackButton(
-            onPressed: context.pop,
-          ),),
+          // CustomDeskTopBar(title: '经典扫雷',leading: BackButton(
+          //   onPressed: context.pop,
+          // ),),
           const Expanded(child: SweeperGamePanel()),
         ],
       ),

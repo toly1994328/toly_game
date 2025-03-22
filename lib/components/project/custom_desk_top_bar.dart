@@ -3,16 +3,18 @@ import 'package:fx_framework/fx_framework.dart';
 
 class CustomDeskTopBar extends StatelessWidget {
   final double height;
-  final String title;
+  final String? title;
   final Widget? center;
   final Widget? leading;
+  final CrossAxisAlignment? vAlignment;
 
   const CustomDeskTopBar({
     super.key,
     this.height = 56,
-    required this.title,
+    this.title,
     this.center,
     this.leading,
+    this.vAlignment,
   });
 
   @override
@@ -27,13 +29,16 @@ class CustomDeskTopBar extends StatelessWidget {
         child: SizedBox(
       height: height,
       child: Row(
+        crossAxisAlignment: vAlignment??CrossAxisAlignment.center,
         children: [
-          const SizedBox(width: 16),
           if(leading!=null) Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: leading!,
           ),
-          Text(title, style: titleStyle),
+          if(title!=null)
+            Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child:  Text(title!, style: titleStyle)),
           child,
           if (kAppEnv.isWindows) const WindowButtons()
         ],

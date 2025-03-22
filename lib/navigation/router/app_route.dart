@@ -23,12 +23,19 @@ enum AppRoute {
   splash('splash', url: '/splash'),
   startError('start_error', url: '/start_error'),
   globalError('404', url: '/404'),
-  gameCenter('game_center', url: '/game_center'),
-  sweeper('sweeper', url: '/sweeper'),
+  gameCenter('game_center', url: '/game/center'),
   save('save', url: '/save'),
   collect('collect', url: '/collect'),
   mine('mine', url: '/mine'),
   settings('settings', url: '/settings'),
+
+  game('game',url: "/game/:name"),
+  // sweeper('sweeper', url: '/sweeper'),
+  // trex('trex', url: '/trex'),
+  // breaks('breaks', url: '/breaks'),
+  // snake('snake', url: '/snake'),
+  // lifeGame('life_game', url: '/life_game'),
+
   ;
 
   final String path;

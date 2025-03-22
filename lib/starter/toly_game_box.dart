@@ -27,7 +27,7 @@ class TolyGameBoxApp with FxStarter<AppConfig> {
 
   @override
   void onStartSuccess(BuildContext context, AppConfig state) {
-    context.go(AppRoute.gameCenter.url);
+    context.go('/game/center');
   }
 
   @override

@@ -14,9 +14,9 @@ class TrexPage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body:  Column(
         children: [
-          CustomDeskTopBar(title: '恐龙快跑',leading: BackButton(
-            onPressed: context.pop,
-          ),),
+          // CustomDeskTopBar(title: '恐龙快跑',leading: BackButton(
+          //   onPressed: context.pop,
+          // ),),
           const Expanded(child: TrexGamePanel()),
         ],
       ),

@@ -15,9 +15,9 @@ class SnakePage extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body:  Column(
         children: [
-          CustomDeskTopBar(title: '贪吃蛇',leading: BackButton(
-            onPressed: context.pop,
-          ),),
+          // CustomDeskTopBar(title: '贪吃蛇',leading: BackButton(
+          //   onPressed: context.pop,
+          // ),),
           const Expanded(child: SnakeGamePanel()),
         ],
       ),
