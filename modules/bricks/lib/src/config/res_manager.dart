@@ -24,11 +24,12 @@ class ResManager {
 
   TextureLoader loader = TextureLoader(package: 'bricks');
 
-  final StreamController<double> _progressCtrl = StreamController.broadcast();
+  late StreamController<double> _progressCtrl;
 
   Stream<double> get loadStream => _progressCtrl.stream;
 
   void load() async{
+    _progressCtrl = StreamController.broadcast();
     sp = await SharedPreferences.getInstance();
     _progressCtrl.add(0.1);
     configManager = GameConfigManager(sp);
