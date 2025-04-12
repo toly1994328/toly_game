@@ -43,5 +43,14 @@
     "logo": "assets/images/logo/snake.svg",
     "article": "https://juejin.cn/post/7402781955078176818",
     "create_at": "2024-08-19"
+  },
+  {
+    "title": "3D 世界",
+    "id": "world3d",
+    "image": "assets/images/cover/world3d.webp",
+    "logo": "assets/images/logo/world3d.svg",
+    "github": "https://github.com/toly1994328/toly_game/tree/game_box/modules/sweeper",
+    "article": "https://juejin.cn/post/7362203195051212863",
+    "create_at": "2024-05-07"
   }
 ]

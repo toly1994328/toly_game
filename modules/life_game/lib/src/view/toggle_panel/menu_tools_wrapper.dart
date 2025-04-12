@@ -11,7 +11,7 @@ enum MenuAction {
   delete('delete'),
   edit('edit'),
   enter('enter'),
-;
+  ;
 
   final String route;
 
@@ -46,15 +46,14 @@ class _MenuToolsWrapperState extends State<MenuToolsWrapper> {
       return widget.child;
     }
     DropMenuCellStyle lightStyle = const DropMenuCellStyle(
-      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-      borderRadius: BorderRadius.all(Radius.circular(6)),
-      foregroundColor: Color(0xffcfd3dc),
-      backgroundColor: Colors.transparent,
-      hoverBackgroundColor: Color(0xff3f4042),
-      disableColor: Color(0xffbfbfbf),
-      hoverForegroundColor: Color(0xffe6f7ff),
-      textStyle: TextStyle(fontSize: 12)
-    );
+        padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+        foregroundColor: Color(0xffcfd3dc),
+        backgroundColor: Colors.transparent,
+        hoverBackgroundColor: Color(0xff3f4042),
+        disableColor: Color(0xffbfbfbf),
+        hoverForegroundColor: Color(0xffe6f7ff),
+        textStyle: TextStyle(fontSize: 12));
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -62,7 +61,9 @@ class _MenuToolsWrapperState extends State<MenuToolsWrapper> {
         onSelect: onSelect,
         style: lightStyle,
         decorationConfig: const DecorationConfig(
-            isBubble: false, backgroundColor: Color(0xff292a2d), radius: Radius.circular(8)),
+            isBubble: false,
+            backgroundColor: Color(0xff292a2d),
+            radius: Radius.circular(8)),
         // placement: Placement.topStart,
         menuItems: [
           // ActionMenu(MenuMeta(
@@ -71,30 +72,30 @@ class _MenuToolsWrapperState extends State<MenuToolsWrapper> {
           //   label: '打开',
           // )),
 
-          ActionMenu(MenuMeta(
-            router: MenuAction.newFrame.route,
-            icon: CupertinoIcons.add_circled,
+          ActionMenu(IconMenu(
+            CupertinoIcons.add_circled,
+            route: MenuAction.newFrame.route,
             label: '新建记录',
           )),
-          ActionMenu(MenuMeta(
-            router: MenuAction.copyFrame.route,
-            icon: CupertinoIcons.doc_on_clipboard,
+          ActionMenu(IconMenu(
+            CupertinoIcons.doc_on_clipboard,
+            route: MenuAction.copyFrame.route,
             label: '创建副本',
           )),
-          ActionMenu(MenuMeta(
-            router: MenuAction.enter.route,
-            icon: CupertinoIcons.text_append,
+          ActionMenu(IconMenu(
+            CupertinoIcons.text_append,
+            route: MenuAction.enter.route,
             label: '选择',
           )),
 
-          ActionMenu(MenuMeta(
-            router: MenuAction.edit.route,
-            icon: CupertinoIcons.pencil_circle,
+          ActionMenu(IconMenu(
+            CupertinoIcons.pencil_circle,
+            route: MenuAction.edit.route,
             label: '修改',
           )),
-          ActionMenu(MenuMeta(
-            router: MenuAction.delete.route,
-            icon: CupertinoIcons.delete,
+          ActionMenu(IconMenu(
+            CupertinoIcons.delete,
+            route: MenuAction.delete.route,
             label: '删除',
           )),
           // ActionMenu(MenuMeta(
@@ -130,7 +131,8 @@ class _MenuToolsWrapperState extends State<MenuToolsWrapper> {
         print("=======onTapDown============");
         // _onShowMenu(detail.localPosition, ctrl);
       },
-      onSecondaryLongPressDown: (detail) => _onShowMenu(detail.localPosition, ctrl),
+      onSecondaryLongPressDown: (detail) =>
+          _onShowMenu(detail.localPosition, ctrl),
       onSecondaryTapDown: (detail) => _onShowMenu(detail.localPosition, ctrl),
       child: widget.child,
     );
@@ -151,7 +153,8 @@ class _MenuToolsWrapperState extends State<MenuToolsWrapper> {
   }
 
   void onSelect(MenuMeta menu) async {
-    MenuAction action = MenuAction.values.singleWhere((e) => e.route == menu.router);
+    MenuAction action =
+        MenuAction.values.singleWhere((e) => e.route == menu.route);
     widget.onMenuAction(action);
   }
 }

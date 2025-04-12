@@ -1,62 +1,39 @@
-name: life_game
+name: toly3d
 description: "A new Flutter package project."
 version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ^3.6.1
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.19.0
-  flame: ^1.26.0
-  uuid: ^4.4.2
-  equatable: ^2.0.5
   tolyui: 0.0.4+9
-
-  path_provider: ^2.1.4
-  sqflite: ^2.3.3+1
-  sqflite_common_ffi: ^2.3.3
+  flutter_bloc: 8.1.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
-
-dependency_overrides:
-  flame:
-    path: ../../packages/flame-1.26.0
-
-#    git:
-#      url: https://github.com/toly1994328/flame.git
-#      ref: 26a71c348f468d20fd5c61e168906b6bdac794d8
-#      path: packages/flame
-#  tolyui:
-#    path: D:\Projects\Flutter\Fx\toly_ui\modules\tolyui
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-  fonts:
-    - family: TolyIcon
-      fonts:
-        - asset: assets/iconfonts/toly_icon.ttf
-    - family: BlackOpsOne
-      fonts:
-        - asset: assets/fonts/BlackOpsOne-Regular.ttf
 
   # To add assets to your package, add an assets section, like this:
+  # assets:
+  #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
-  # https://flutter.dev/assets-and-images/#from-packages
+  # https://flutter.dev/to/asset-from-package
   #
   # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
+  # https://flutter.dev/to/resolution-aware-images
 
   # To add custom fonts to your package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
@@ -76,10 +53,4 @@ flutter:
   #         weight: 700
   #
   # For details regarding fonts in packages, see
-  # https://flutter.dev/custom-fonts/#from-packages
-toly:
-  icon:
-    src_zip: 'assets/hide/download.zip' # 下载的压缩包资源
-    assets_dir: 'assets/iconfonts'  # ttf文件解压的文件夹
-    dist_file: 'lib/app/res/toly_icon.dart' # 生成的代码文件地址
-    font_package: 'life_game'
+  # https://flutter.dev/to/font-from-package

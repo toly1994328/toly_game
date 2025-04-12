@@ -58,6 +58,12 @@ class TextureLoader {
     }
   }
 
+  void clear(){
+    _svgMap.clear();
+    _frames.clear();
+    _spriteMap.clear();
+  }
+
   Future<void> load(
     String jsonAsset,
     String imageAsset, {

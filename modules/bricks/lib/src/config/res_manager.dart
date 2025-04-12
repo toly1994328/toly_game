@@ -28,6 +28,10 @@ class ResManager {
 
   Stream<double> get loadStream => _progressCtrl.stream;
 
+  void dispose(){
+    loader.clear();
+  }
+
   void load() async{
     _progressCtrl = StreamController.broadcast();
     sp = await SharedPreferences.getInstance();

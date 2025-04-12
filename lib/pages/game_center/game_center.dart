@@ -22,7 +22,7 @@ const Color matrixGreen = Color(0xFF00FF88); // 矩阵绿
 const Color deepSpace = Color(0xFF1A1A2C); // 太空深蓝
 
 class GameCenterNavigation extends StatelessWidget {
-  final Widget child;
+  final StatefulNavigationShell child;
 
   const GameCenterNavigation({super.key, required this.child});
 
@@ -32,47 +32,10 @@ class GameCenterNavigation extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body: Column(
         children: [
-          const GameCenterTopBar(),
+          GameCenterTopBar(onClose: _closeGame),
           const Divider(),
           Expanded(child: child)
         ],
-      ),
-    );
-  }
-}
-
-class GameCenterTopBar extends StatelessWidget {
-  const GameCenterTopBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final String activePath = GoRouterState.of(context).uri.toString();
-    List<ImageMenu> games =
-        context.select((GameCenterBloc bloc) => bloc.state.tabMenus);
-    if (games.isEmpty) {
-      return const CustomDeskTopBar(title: '游戏中心');
-    }
-    return CustomDeskTopBar(
-      vAlignment: CrossAxisAlignment.start,
-      center: Wrap(
-        children: [
-          ImageMenu(
-            "assets/images/logo/game_center.svg",
-            label: '游戏中心',
-            route: '/game/center',
-            closeable: false,
-          ),
-          ...games
-        ].map((e) {
-          return GameTab(
-            active: e.route == activePath,
-            menu: e,
-            onClose: _closeGame,
-            onTap: (menu) {
-              context.go(menu.route);
-            },
-          );
-        }).toList(),
       ),
     );
   }
@@ -81,6 +44,7 @@ class GameCenterTopBar extends StatelessWidget {
     GameCenterBloc bloc = context.read<GameCenterBloc>();
     int removedIndex = bloc.closeGame(menu);
     List<ImageMenu> menus = bloc.state.tabMenus;
+    child.closeBranch(menu.route);
     if (!active) return;
 
     String nextRoute() {
@@ -92,7 +56,45 @@ class GameCenterTopBar extends StatelessWidget {
       }
       return menus[removedIndex - 1].route;
     }
+
     context.go(nextRoute());
+  }
+}
+
+class GameCenterTopBar extends StatelessWidget {
+  final CloseCallBack<ImageMenu> onClose;
+
+  const GameCenterTopBar({super.key, required this.onClose});
+
+  @override
+  Widget build(BuildContext context) {
+    final String activePath = GoRouterState.of(context).uri.toString();
+    List<ImageMenu> games = context.select(
+      (GameCenterBloc bloc) => bloc.state.tabMenus,
+    );
+    if (games.isEmpty) {
+      return const CustomDeskTopBar(title: '游戏中心');
+    }
+    const ImageMenu gameCenter = ImageMenu(
+      "assets/images/logo/game_center.svg",
+      label: '游戏中心',
+      route: '/game/center',
+      closeable: false,
+    );
+    games = [gameCenter, ...games];
+    return CustomDeskTopBar(
+      vAlignment: CrossAxisAlignment.start,
+      center: Wrap(
+        children: games.map((e) {
+          return GameTab(
+            active: e.route == activePath,
+            menu: e,
+            onClose: onClose,
+            onTap: (menu) => context.go(menu.route),
+          );
+        }).toList(),
+      ),
+    );
   }
 }
 

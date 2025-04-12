@@ -14,11 +14,6 @@ import 'package:tolyui/tolyui.dart';
 import '../logic/frame_evolve.dart';
 import '../res/toly_icon.dart';
 
-
-
-
-
-
 enum ToolAction {
   play(TolyIcon.icon_play),
   next(TolyIcon.icon_next),
@@ -31,7 +26,6 @@ enum ToolAction {
   list(Icons.dataset_linked_outlined),
   save(Icons.save),
   zero(Icons.repeat_one_outlined),
-
   ;
 
   final IconData? icon;
@@ -60,8 +54,6 @@ class ActionToolbar extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(4)),
     );
 
-
-
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8),
       width: 30,
@@ -72,8 +64,7 @@ class ActionToolbar extends StatelessWidget {
             child: Wrap(
                 spacing: 6,
                 direction: Axis.vertical,
-                children:
-                [
+                children: [
                   ToolAction.play,
                   ToolAction.next,
                   ToolAction.see,
@@ -82,17 +73,19 @@ class ActionToolbar extends StatelessWidget {
                   ToolAction.move,
                   ToolAction.zero,
                 ].map((e) {
-                  if(e==ToolAction.play){
+                  if (e == ToolAction.play) {
                     return PlayCtrlButton(
                       status: status,
                       onAction: onAction,
                     );
                   }
-                  if(e==ToolAction.see || e==ToolAction.paint ||
-                     e==ToolAction.eraser || e==ToolAction.move){
+                  if (e == ToolAction.see ||
+                      e == ToolAction.paint ||
+                      e == ToolAction.eraser ||
+                      e == ToolAction.move) {
                     return ValueListenableBuilder(
                       valueListenable: actions,
-                      builder: (context,value,__) {
+                      builder: (context, value, __) {
                         return TolyAction(
                           selected: value.contains(e),
                           style: style,
@@ -112,7 +105,7 @@ class ActionToolbar extends StatelessWidget {
           ),
           ValueListenableBuilder(
             valueListenable: actions,
-            builder: (context,value,__) {
+            builder: (context, value, __) {
               return TolyAction(
                 selected: value.contains(ToolAction.list),
                 style: style,
@@ -124,7 +117,7 @@ class ActionToolbar extends StatelessWidget {
           const SizedBox(height: 6),
           ValueListenableBuilder(
             valueListenable: actions,
-            builder: (context,value,__) {
+            builder: (context, value, __) {
               return TolyAction(
                 selected: value.contains(ToolAction.save),
                 style: style,
@@ -133,17 +126,19 @@ class ActionToolbar extends StatelessWidget {
               );
             },
           ),
-          const SizedBox(height: 6),TolyAction(
+          const SizedBox(height: 6),
+          TolyAction(
             style: style,
             child: Icon(ToolAction.reset.icon, size: 18),
-            onTap: (){
+            onTap: () {
               onAction(ToolAction.reset);
             },
           ),
-          const SizedBox(height: 6),TolyAction(
+          const SizedBox(height: 6),
+          TolyAction(
             style: style,
             child: Icon(ToolAction.clear.icon, size: 18),
-            onTap: (){
+            onTap: () {
               onAction(ToolAction.clear);
             },
           ),
@@ -157,7 +152,8 @@ class PlayCtrlButton extends StatelessWidget {
   final ValueNotifier<EvolveStatus> status;
   final ValueChanged<ToolAction> onAction;
 
-  const PlayCtrlButton({super.key, required this.status, required this.onAction});
+  const PlayCtrlButton(
+      {super.key, required this.status, required this.onAction});
 
   @override
   Widget build(BuildContext context) {
@@ -167,13 +163,12 @@ class PlayCtrlButton extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(4)),
     );
 
-
     return ValueListenableBuilder(
       valueListenable: status,
       builder: (BuildContext context, EvolveStatus value, Widget? child) {
         Color? color;
         IconData icon;
-        switch(value){
+        switch (value) {
           case EvolveStatus.evolving:
             color = Colors.red;
             icon = TolyIcon.icon_pause;
@@ -185,7 +180,11 @@ class PlayCtrlButton extends StatelessWidget {
 
         return TolyAction(
           style: style,
-          child: Icon(icon, size: 18,color: color,),
+          child: Icon(
+            icon,
+            size: 18,
+            color: color,
+          ),
           onTap: () => onAction(ToolAction.play),
         );
       },

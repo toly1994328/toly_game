@@ -6,7 +6,6 @@
 // CreateTime:  2024-07-08
 // Contact Me:  1981462002@qq.com
 
-
 import 'package:flutter/material.dart';
 import 'package:tolyui/tolyui.dart';
 
@@ -37,7 +36,6 @@ class StatusBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 12),
       child: Row(
         children: [
-
           Spacer(),
           ValueListenableBuilder(
             valueListenable: speed,
@@ -47,8 +45,7 @@ class StatusBar extends StatelessWidget {
                 speed: value,
               );
             },
-          )
-          ,
+          ),
           const SizedBox(width: 12),
           ValueListenableBuilder(
             valueListenable: generation,
@@ -69,7 +66,8 @@ class RateChangeMenu extends StatelessWidget {
   final ValueChanged<EvolveSpeed> onSpeedChange;
   final EvolveSpeed speed;
 
-  const RateChangeMenu({super.key, required this.onSpeedChange, required this.speed});
+  const RateChangeMenu(
+      {super.key, required this.onSpeedChange, required this.speed});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +83,8 @@ class RateChangeMenu extends StatelessWidget {
             hoverForegroundColor: Color(0xffe6f7ff),
             textStyle: TextStyle(fontSize: 12)),
         offsetCalculator: boxOffsetCalculator,
-        decorationConfig: DecorationConfig(isBubble: false, backgroundColor: bgColor),
+        decorationConfig:
+            DecorationConfig(isBubble: false, backgroundColor: bgColor),
         onSelect: (MenuMeta meta) {
           SpeedMeta? speedMeta = meta.ext?.me<SpeedMeta>();
           if (speedMeta != null) {
@@ -97,7 +96,7 @@ class RateChangeMenu extends StatelessWidget {
               (e) => ActionMenu(
                 active: speed == e,
                 MenuMeta(
-                  router: '${e.level}',
+                  route: '${e.level}',
                   label: 'v * ${e.level}',
                   ext: SpeedMeta(e),
                 ),
@@ -118,7 +117,7 @@ class RateChangeMenu extends StatelessWidget {
   }
 }
 
-class SpeedMeta extends MenuMateExt {
+class SpeedMeta extends Extra {
   final EvolveSpeed speed;
 
   SpeedMeta(this.speed);

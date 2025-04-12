@@ -13,25 +13,22 @@ class DeskNavigationRail extends StatelessWidget {
   const DeskNavigationRail({super.key});
 
   List<MenuMeta> get navMenus => [
-        MenuMeta(
-          icon: TolyGameIcon.game_center,
-          label: "首页",
-          router: AppRoute.gameCenter.url
-        ),
-        MenuMeta(
-          icon: TolyGameIcon.save,
+        IconMenu(TolyGameIcon.game_center,
+            label: "首页", route: AppRoute.gameCenter.url),
+        IconMenu(
+          TolyGameIcon.save,
           label: "存档",
-          router: AppRoute.save.url,
+          route: AppRoute.save.url,
         ),
-        MenuMeta(
-          icon: TolyGameIcon.collect,
+        IconMenu(
+          TolyGameIcon.collect,
           label: "收藏",
-          router: AppRoute.collect.url,
+          route: AppRoute.collect.url,
         ),
-        MenuMeta(
-          icon: TolyGameIcon.mine,
+        IconMenu(
+          TolyGameIcon.mine,
           label: "我的",
-          router: AppRoute.mine.url,
+          route: AppRoute.mine.url,
         ),
       ];
 
@@ -82,6 +79,10 @@ class GameMenuCell extends StatelessWidget {
     Color? menuColor = foregroundTween.transform(display.rate);
 
     TextStyle style = TextStyle(color: textColor, fontSize: 12);
+    IconData? icon;
+    if (menu is IconMenu) {
+      icon = (menu as IconMenu).icon;
+    }
     return Container(
       alignment: Alignment.center,
       height: 64,
@@ -90,7 +91,7 @@ class GameMenuCell extends StatelessWidget {
         direction: Axis.vertical,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          Icon(menu.icon, color: menuColor, size: 24),
+          Icon(icon, color: menuColor, size: 24),
           Text(menu.label, style: style),
         ],
       ),

@@ -331,13 +331,13 @@ packages:
     source: hosted
     version: "0.0.1"
   fx_go_router_ext:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: fx_go_router_ext
-      sha256: f6d65dc6bcba318d3cd62162ca16fbe85fbdfbb17841cebf8e47376b9b3e2f6f
+      sha256: dc65ac677f2058b8192ca50bdcd508a12ef4b6c150f64ca8d595b536ac6e5d1b
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.5+1"
+    version: "0.0.6+1"
   fx_platform_adapter:
     dependency: transitive
     description:
@@ -868,14 +868,21 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.4"
+  toly3d:
+    dependency: "direct main"
+    description:
+      path: "modules/toly3d"
+      relative: true
+    source: path
+    version: "0.0.1"
   tolyui:
     dependency: "direct main"
     description:
       name: tolyui
-      sha256: "14170a8bf7e9aa771f5138cce7467cca14cd3e07a6c280a43abcced03cf7af43"
+      sha256: "2c49442fd9cb1f5c89fcc5c30cded148e3abe749bea0064e9218d2bb9a47640c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4+8"
+    version: "0.0.4+9"
   tolyui_color:
     dependency: transitive
     description:
@@ -888,33 +895,33 @@ packages:
     dependency: transitive
     description:
       name: tolyui_feedback
-      sha256: "191375272acaf0b31db91299a6d7be8749bc68840cfb8b52ff855960df38c58d"
+      sha256: "4549ea17aa453b931b0859c6f840228222a0637186b3e9bfcb63218b879c7132"
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.6+1"
+    version: "0.3.6+3"
   tolyui_message:
     dependency: transitive
     description:
       name: tolyui_message
-      sha256: "1fcef0211de537ee9ec69178693b624d1921dc486d8c7e41ea827c4460d7b83b"
+      sha256: "6a0876efdaa7f68e004c566404485af1a1f6fc0e5e9cae4df8c69a79cd096c95"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.4"
+    version: "0.2.5"
   tolyui_meta:
     dependency: "direct main"
     description:
       path: "D:\\Projects\\Flutter\\Fx\\toly_ui\\modules\\tolyui_meta"
       relative: false
     source: path
-    version: "0.0.1"
+    version: "0.0.2+1"
   tolyui_navigation:
     dependency: transitive
     description:
       name: tolyui_navigation
-      sha256: da828eb4db2764aa1340303f067aaeddd9cc5934543b9fbaad425570f5d59563
+      sha256: "8c4ddc82cb80982e5f1a4cdc39ebf3ceec6b50899dfef407abba3841d3b54610"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0+3"
+    version: "0.2.0"
   tolyui_rx_layout:
     dependency: transitive
     description:

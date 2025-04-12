@@ -14,14 +14,24 @@ import 'overlays/package_page/package_page.dart';
 import 'overlays/settings/settings_page.dart';
 import 'overlays/shop_page/shop_page.dart';
 
-class BreakGamePanel extends StatelessWidget {
+class BreakGamePanel extends StatefulWidget {
   const BreakGamePanel({super.key});
 
+  @override
+  State<BreakGamePanel> createState() => _BreakGamePanelState();
+}
+
+class _BreakGamePanelState extends State<BreakGamePanel> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: const AssetsLoadingPage());
   }
 
+  @override
+  void dispose() {
+    ResManager.instance.dispose();
+    super.dispose();
+  }
 }
 
 class BricksGameApp extends StatelessWidget{
